@@ -42,7 +42,7 @@ if(class_exists('WooCommerce')) {
 
     //https://avada.io/woocommerce/docs/select-multiple-variations.html
 
-    function webroom_add_multiple_products_to_cart( $url = false ) {
+    function add_multiple_products_to_cart( $url = false ) {
         // Make sure WC is installed, and add-to-cart qauery arg exists, and contains at least one comma.
         if ( ! class_exists( 'WC_Form_Handler' ) || empty( $_REQUEST['add-to-cart'] ) || false === strpos( $_REQUEST['add-to-cart'], ',' ) ) {
             return;
@@ -100,7 +100,7 @@ if(class_exists('WooCommerce')) {
     }
     
     // Fire before the WC_Form_Handler::add_to_cart_action callback.
-    add_action( 'wp_loaded', 'webroom_add_multiple_products_to_cart', 15 );
+    add_action( 'wp_loaded', 'add_multiple_products_to_cart', 15 );
     
     
     /**
@@ -129,5 +129,6 @@ if(class_exists('WooCommerce')) {
         return call_user_func_array( array( $method, 'invoke' ), $args );
     }
 
+    
 }
     
