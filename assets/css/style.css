@@ -1,0 +1,463 @@
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size: 10px; 10/16 = 62.5% */
+    /* pour travailler en rem, 1rem = 10px */
+    font-size: 62.5%;
+    margin-top: 0 !important;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    color:#1D1D1D;
+}
+
+.nav {
+    padding: 10px 10px;
+    border-bottom: 1px solid #D7D7D7;
+    background-color: #e1e1e1;
+    min-width: 100%;
+    width: 120%;
+}
+.eurospine-logo {
+    width: 60px;
+}
+.woocommerce-error {
+    display:none;
+}
+.main-products {
+    background-color: #efefef;
+}
+
+.homepage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.yes-no-inputs{
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.input-homepage {
+    display: none;
+}
+.label-homepage {
+    cursor: pointer;
+    border: 1px solid #D7D7D7;
+    padding: 15px 40px;
+    margin-right: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.inputs-validation {
+    display: none;
+}
+
+.inputs-validation-infos {
+    max-width: 600px;
+    background-color: #F2F2F2;
+    border: 1px solid #D7D7D7;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+#input-validation {
+    border: 1px solid #D7D7D7;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button#input-button {
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    background: #1D1D1D;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 20px;
+}
+.page-products {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: 150px;
+}
+
+#customCheckout {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    z-index: 1000;
+    min-height: 80px;
+    max-height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
+}
+.item-in-cart {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.items {
+    display: flex;
+}
+.selected-product-title {
+    margin-right: 20px;
+}
+.recap-title {
+
+}
+.selected-product-price {
+    font-weight: bold;
+}
+.custom-checkout-button {
+    background-color: #FFFFFF;
+    color: #1D1D1D;
+    border:1px solid #FFFFFF;
+    padding: 10px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+.custom-checkout-button:hover {
+    background-color: #1D1D1D;
+    color: #FFFFFF;
+}
+
+.days {
+    flex: 0 0 10%;
+    height: 100%;
+    background-color: #FAFAFA;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border-right: 1px solid #D7D7D7;
+    margin-right: 20px;
+}
+
+.days-am-pm {
+    color: #C1C1C1;
+    display: flex;
+    min-height: 160px;
+    justify-content: start;
+    align-items: center;
+    
+}
+.days-day {
+    font-size: 18px;
+    font-weight: 700;
+    position:absolute;
+}
+
+.day-2 {
+    top: 315px;
+}
+.day-3 {
+    top: 645px; 
+}
+
+.products {
+    flex: 0 0 88%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+    padding-top: 20px;
+} 
+.product { 
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    transition: all .3s;
+    background-color: #F2F2F2;
+    border: 1px solid #D7D7D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#product-selection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.product-selected {
+    border: 5px solid #0079A7 !important;
+}
+.product-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.product-price {
+    font-weight: 700;
+    margin-top: 10px;
+    display:none;
+}
+
+.product-description {
+    display: none;
+}
+.advanced-module-2-revisions-and-complications-management-no,
+.advanced-module-2-revisions-and-complications-management-yes {
+    grid-column: 5 / 6;
+    grid-row: 4 / 6;
+}
+.advanced-module-2-revisions-and-complications-management-no > .product-title,
+.advanced-module-2-revisions-and-complications-management-yes > .product-title {
+    color: #D07071;
+
+}
+.advanced-module-1-extended-indications-and-advanced-operative-techniques-no,
+.advanced-module-1-extended-indications-and-advanced-operative-techniques-yes {
+    grid-column: 5 / 6;
+    grid-row: 1 / 4;
+}
+.advanced-module-1-extended-indications-and-advanced-operative-techniques-no > .product-title,
+.advanced-module-1-extended-indications-and-advanced-operative-techniques-yes > .product-title {
+    
+    color: #574040;
+    
+}
+
+.module-6-using-literature-to-inform-my-practice-no, 
+.module-6-using-literature-to-inform-my-practice-yes {
+    
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.module-6-using-literature-to-inform-my-practice-no > .product-title, 
+.module-6-using-literature-to-inform-my-practice-yes > .product-title {
+    color: #AF8F30;
+    
+}
+
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no-2,
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes-2 {
+    
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no-2 > .product-title,
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes-2 > .product-title {
+    color: #3F5258;
+}
+
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no,
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no > .product-title,
+.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes > .product-title {
+    color: #3F5258;
+}
+.module-4-trauma-cohort-1-no-2,
+.module-4-trauma-cohort-1-yes-2 {
+    grid-column: 3 / 4;
+    grid-row: 6 / 7;
+}
+.module-4-trauma-cohort-1-no-2 > .product-title,
+.module-4-trauma-cohort-1-yes-2 > .product-title {
+    color: #758D56;
+}
+
+.module-4-trauma-cohort-1-no,
+.module-4-trauma-cohort-1-yes {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+    
+}
+
+.module-4-trauma-cohort-1-no > .product-title,
+.module-4-trauma-cohort-1-yes > .product-title {
+    color: #758D56;
+}
+.module-3-spinal-deformities-cohort-1-no-2,
+.module-3-spinal-deformities-cohort-1-yes-2 {
+    
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;   
+}
+.module-3-spinal-deformities-cohort-1-no-2 > .product-title,
+.module-3-spinal-deformities-cohort-1-yes-2 > .product-title {
+    color: #99595A;
+}
+
+
+.module-3-spinal-deformities-cohort-1-no,
+.module-3-spinal-deformities-cohort-1-yes {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.module-3-spinal-deformities-cohort-1-no > .product-title,
+.module-3-spinal-deformities-cohort-1-yes > .product-title {
+    color: #99595A;
+}
+.module-2-degenerative-diseases-of-the-spine-cohort-1-no,
+.module-2-degenerative-diseases-of-the-spine-cohort-1-yes {
+    
+    grid-column: 1 / 2;
+    grid-row: 4 / 6;
+}
+.module-2-degenerative-diseases-of-the-spine-cohort-1-no > .product-title,
+.module-2-degenerative-diseases-of-the-spine-cohort-1-yes > .product-title {
+    color: #607699;
+}
+.module-2-degenerative-diseases-of-the-spine-cohort-1-no-2,
+.module-2-degenerative-diseases-of-the-spine-cohort-1-yes-2 {
+    
+    grid-column: 2 / 3;
+    grid-row: 5 / 7;
+}
+
+.module-2-degenerative-diseases-of-the-spine-cohort-1-no-2 > .product-title,
+.module-2-degenerative-diseases-of-the-spine-cohort-1-yes-2 > .product-title {
+    color: #607699;
+}
+
+
+.module-1-basic-comprehensive-course-cohort-1-no,
+.module-1-basic-comprehensive-course-cohort-1-yes {
+    
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.module-1-basic-comprehensive-course-cohort-1-no  > .product-title,
+.module-1-basic-comprehensive-course-cohort-1-yes  > .product-title {
+    color: #685A74;
+}
+
+
+.module-1-basic-comprehensive-course-cohort-1-no-2, 
+.module-1-basic-comprehensive-course-cohort-1-yes-2 {
+   
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.module-1-basic-comprehensive-course-cohort-1-no-2  > .product-title, 
+.module-1-basic-comprehensive-course-cohort-1-yes-2  > .product-title {
+    color: #685A74;
+}
+
+/* ====== UTILITIES ====== */
+
+.display-none {
+    display: none;
+}
+
+/* ====== CHECKOUT ====== */
+
+.single-page > .woocommerce {
+    padding: 50px 100px;
+}
+
+.input-text, .select, .country_select {
+    border: 1px solid #D7D7D7;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    width: 100%;
+}
+
+#billing_wooccm23_field, #billing_wooccm25_field, #billing_wooccm24_field {
+    border-top: 1px solid #D7D7D7;
+    padding-top: 30px;
+}
+.woocommerce-billing-fields {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+#billing_email_field, #billing_country_field {
+    padding-bottom: 20px;
+}
+.woocommerce form .form-row-last, .woocommerce-page form .form-row-last {
+    float: left;
+}
+@media screen and (max-width: 1400px) {
+    .days-day {
+        font-size: 16px;
+        
+    }
+    .days {
+        padding:10px;
+    }
+}
+@media screen and (max-width: 1145px) {
+    body {
+        font-size: 1.4rem;
+    }
+    .product {
+        padding: 20px;
+    }
+    .product-title, .days-day {
+        font-size: 14px;
+    }
+    #customCheckout {
+        padding:20px;
+        font-size: 1.4rem;
+    }
+    .selected-product-title {
+        margin-right: 5px;
+    }
+    .days {
+        flex: 0 0 15%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .product-title, .days-day {
+        font-size: 12px;
+    }
+    .nav {
+        width: 140%;
+    }
+    .days {
+        flex: 0 0 20%;
+    }
+    
+}
