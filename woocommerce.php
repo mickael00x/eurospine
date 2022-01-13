@@ -5,7 +5,26 @@
 <main class="page-products">
 <div id="customCheckout" style="display: none;">
     <div class="recapItemsInCart">
-        <span class="recap-title">Selected items:</span>
+        <span class="recap-title">Selected items: 
+            <div class="notes">
+                Notes &#9432;
+                <div class="notes-infos">
+                    <h4>Fees:</h4>
+                    <p>
+                        The registration fee covers the cost of the eLearning and live components of the course, coffee breaks and lunch.<br>
+                        Modules 1 to 5 are delivered twice during the EduWeek. <br>Participants can only register for ONE of the module's cohort, at their preferred time/dates. 
+                    </p>
+                    <h4>Travel and accommodation:</h4>
+                    <p>
+                        Participants are required to book and pay for their travel and accommodation themselves.<br>This is not included in the registration fee.
+                    </p>
+                    <h4>Accompanying persons:</h4>
+                    <p>
+                        There are no accompanying persons fees nor accompanying persons programme during this course.
+                    </p>
+                </div>
+            </div>
+        </span>
         <span class="item-in-cart">
         </span>
     </div>

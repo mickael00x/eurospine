@@ -134,7 +134,7 @@ button#input-button {
     margin-right: 20px;
 }
 .recap-title {
-
+    display: flex;
 }
 .selected-product-price {
     font-weight: bold;
@@ -215,6 +215,31 @@ button#input-button {
     height: 100%;
     opacity: 0;
     cursor: pointer;
+}
+.notes {
+    margin-left: 20px;
+    font-weight: 400;
+    background-color: #F2F2F2;
+    color: #000;
+    padding: 2px 10px;
+    margin-bottom: 3px;
+    border-radius: 20px;
+    position: relative;
+}
+.notes:hover .notes-infos {
+    display: block;
+}
+.notes-infos {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 90px;
+    background-color: #FFF;
+    border: 1px solid #D7D7D7;
+    padding: 10px;
+    border-radius: 20px;
+    width: 600px;
+    cursor: help;
 }
 .product-selected {
     border: 5px solid #0079A7 !important;
@@ -441,17 +466,24 @@ button#input-button {
 .woocommerce-cart .woocommerce-breadcrumb {
     
 }
-
+@media screen and (min-width: 1146px) {
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
 @media screen and (max-width: 1400px) {
     .days-day {
-        font-size: 16px;
-        
+        font-size: 16px;    
     }
     .days {
         padding:10px;
     }
 }
 @media screen and (max-width: 1145px) {
+    html {
+        overflow: scroll;
+    }
     body {
         font-size: 1.4rem;
     }
@@ -474,15 +506,24 @@ button#input-button {
 }
 
 @media screen and (max-width: 760px) {
-    .product-title, .days-day {
+    .single-page > .woocommerce, .woocommerce-breadcrumb {
+        padding: 10px;
+    }
+    .product-title {
         font-size: 12px;
     }
+    .days-day {
+        font-size: 10px;
+    }
     .nav {
-        width: 140%;
+        width: 200%;
     }
     .days {
         flex: 0 0 20%;
     }
-    
+    .notes-infos {
+        left: -10px;
+        bottom: 30px;
+    }
 }
 

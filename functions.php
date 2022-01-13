@@ -128,7 +128,6 @@ if(class_exists('WooCommerce')) {
         $args = array_merge( array( $reflection ), $args );
         return call_user_func_array( array( $method, 'invoke' ), $args );
     }
-
+ 
     
 }
-    

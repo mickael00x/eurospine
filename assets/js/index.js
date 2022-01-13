@@ -35,7 +35,6 @@ window.addEventListener("load", function() {
                     
                     // page non-member
                     if(checkbox.value == '52') {
-                        //15,18,31,34,46,43,49
                         removeItem(15);
                         removeItem(18);
                         removeItem(31);
