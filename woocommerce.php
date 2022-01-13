@@ -44,6 +44,18 @@
     <div class="days-am-pm">PM</div>
 </div>
 <div class="products">
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
+    <div class="empty-product"></div>
     <?php
 
     $args = array(  

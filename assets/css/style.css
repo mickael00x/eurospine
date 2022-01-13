@@ -156,7 +156,6 @@ button#input-button {
 
 .days {
     flex: 0 0 10%;
-    height: 100%;
     background-color: #FAFAFA;
     padding: 20px;
     display: grid;
@@ -184,7 +183,7 @@ button#input-button {
     top: 315px;
 }
 .day-3 {
-    top: 645px; 
+    top: 640px; 
 }
 
 .products {
@@ -405,6 +404,11 @@ button#input-button {
     color: #685A74;
 }
 
+.empty-product {
+    background-color: #f7f7f7;
+    border-radius: 20px;
+}
+
 /* ====== UTILITIES ====== */
 
 .display-none {
@@ -472,12 +476,42 @@ button#input-button {
         overflow-y: scroll;
     }
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1750px) {
+    .day-2 {
+        top: 366px;
+    }
+    .day-3 {
+        top: 742px;
+    }
+}
+@media screen and (max-width: 1505px) {
     .days-day {
         font-size: 16px;    
     }
     .days {
         padding:10px;
+    }
+
+    .day-2 {
+        top: 415px;
+    }
+    .day-3 {
+        top: 840px;
+    }
+}
+@media screen and (max-width: 1233px) {
+    .days-day {
+        font-size: 16px;    
+    }
+    .days {
+        padding:10px;
+    }
+
+    .day-2 {
+        top: 460px;
+    }
+    .day-3 {
+        top: 933px;
     }
 }
 @media screen and (max-width: 1145px) {
@@ -486,6 +520,12 @@ button#input-button {
     }
     body {
         font-size: 1.4rem;
+    }
+    .day-2 {
+        top: 315px;
+    }
+    .day-3 {
+        top: 640px;
     }
     .product {
         padding: 20px;
