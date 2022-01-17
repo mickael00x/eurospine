@@ -298,7 +298,7 @@ window.addEventListener("load", function() {
         dietarySelect.addEventListener('change',
             function (event) {
                 elem = otherDietaryContainer;
-                if (event.target.value = 'other') {
+                if (event.target.value = 'Other') {
                     if (otherDietaryContainer.classList.contains(conditionnalClass)) {
                         elem.classList.remove(conditionnalClass)
                     }
@@ -314,7 +314,7 @@ window.addEventListener("load", function() {
         otherAllergiesInput.addEventListener('change',
             function (event) {
                 elem = otherAllergiesContainer;
-                if (event.target.value = 'other') {
+                if (event.target.value = 'Other') {
                     if (elem.classList.contains(conditionnalClass)) {
                         elem.classList.remove(conditionnalClass)
                     }
