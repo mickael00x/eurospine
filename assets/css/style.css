@@ -25,7 +25,24 @@ body {
     border-bottom: 1px solid #D7D7D7;
     background-color: #e1e1e1;
     min-width: 100%;
-    width: 120%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-menu {
+    display: flex;
+}
+.nav-item {
+    margin-right: 20px;
+}
+.nav-link {
+    text-decoration: none;
+    color: #1D1D1D;
+    transition: all .3s;
+}
+.nav-link:hover {
+    color: #0079A7;
 }
 .eurospine-logo {
     width: 60px;
@@ -159,16 +176,39 @@ button#input-button {
     background-color: #FAFAFA;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 120px);
     border-right: 1px solid #D7D7D7;
     margin-right: 20px;
+    grid-gap: 10px;
+}
+
+.woocommerce-notices-wrapper {
+    display: none;
+}
+.woocommerce-checkout > .single-page > .woocommerce {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+#checkout {
+    display: flex;
+    flex-direction: column;
+}
+#order_review {
+    display: flex;
+}
+#payment {
+    margin-left: 40px;
+}
+.woocommerce form.checkout_coupon {
+    border-radius: 20px;
+    margin-top: 0;
 }
 
 .days-am-pm {
     color: #C1C1C1;
     display: flex;
-    min-height: 160px;
     justify-content: start;
     align-items: center;
     
@@ -176,21 +216,54 @@ button#input-button {
 .days-day {
     font-size: 18px;
     font-weight: 700;
-    position:absolute;
 }
 
+.day-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2
+}
 .day-2 {
-    top: 315px;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
 }
 .day-3 {
-    top: 640px; 
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+
+.day-1-start {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.day-1-end {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.day-2-start {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.day-2-end {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+.day-3-start {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+
+.day-3-end {
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
 }
 
 .products {
     flex: 0 0 88%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 120px);
     grid-gap: 10px;
     padding-top: 20px;
 } 
@@ -477,12 +550,8 @@ button#input-button {
     }
 }
 @media screen and (max-width: 1750px) {
-    .day-2 {
-        top: 366px;
-    }
-    .day-3 {
-        top: 742px;
-    }
+    
+    
 }
 @media screen and (max-width: 1505px) {
     .days-day {
@@ -492,12 +561,7 @@ button#input-button {
         padding:10px;
     }
 
-    .day-2 {
-        top: 415px;
-    }
-    .day-3 {
-        top: 840px;
-    }
+    
 }
 @media screen and (max-width: 1233px) {
     .days-day {
@@ -507,12 +571,7 @@ button#input-button {
         padding:10px;
     }
 
-    .day-2 {
-        top: 460px;
-    }
-    .day-3 {
-        top: 933px;
-    }
+    
 }
 @media screen and (max-width: 1145px) {
     html {
@@ -521,12 +580,7 @@ button#input-button {
     body {
         font-size: 1.4rem;
     }
-    .day-2 {
-        top: 315px;
-    }
-    .day-3 {
-        top: 640px;
-    }
+    
     .product {
         padding: 20px;
     }

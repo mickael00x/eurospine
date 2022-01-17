@@ -17,19 +17,8 @@ function eurospine_custom_theme() {
 add_action( 'wp_enqueue_scripts' , 'eurospine_custom_theme');
 
 
-/* 
-    WooCommerce
-    - functions de support 
-    - custom functions
-    - ?
-*/
-
 if(class_exists('WooCommerce')) {
 
-    /** 
-        *TODO: 
-            [] 
-    */
     
     global $woocommerce;
 
@@ -39,6 +28,16 @@ if(class_exists('WooCommerce')) {
     }
     add_action( 'after_setup_theme', 'woocommerceshop_add_woocommerce_support');
 
+
+
+    add_action( 'init', 'clear_cart_before_every_checkout');
+    
+    function clear_cart_before_every_checkout() {
+        global $woocommerce;
+        if ( isset($_GET['empty-cart']) ) {
+            $woocommerce->cart->empty_cart(); 
+        }
+    }
 
     //https://avada.io/woocommerce/docs/select-multiple-variations.html
 

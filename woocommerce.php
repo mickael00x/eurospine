@@ -35,13 +35,13 @@
 <div class="days">
     <div class="days-day day-1">Monday <br> 27 June 2022</div>
     <div class="days-am-pm day-1-start">AM</div>
-    <div class="days-am-pm">PM</div>
+    <div class="days-am-pm day-1-end">PM</div>
     <div class="days-day day-2">Tuesday <br> 28 June 2022</div>
     <div class="days-am-pm day-2-start">AM</div>
-    <div class="days-am-pm">PM</div>
+    <div class="days-am-pm day-2-end">PM</div>
     <div class="days-day day-3">Wednesday <br> 29 June 2022</div>
     <div class="days-am-pm day-3-start">AM</div>
-    <div class="days-am-pm">PM</div>
+    <div class="days-am-pm day-3-end">PM</div>
 </div>
 <div class="products">
     <div class="empty-product"></div>
