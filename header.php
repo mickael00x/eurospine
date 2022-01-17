@@ -20,8 +20,8 @@
         <div class="nav-item">
             <a href="/how-to-get-to-strasbourg/" class="nav-link">How to get to Strasbourg</a>
         </div>
-        <div class="nav-item">
-            <a href="" class="nav-link">Les Haras Hotel****</a>
+        <div class="nav-item ">
+            <a href="https://les-haras-hotel.com/fr/" target="blank" class="nav-link haras-hotel">Suggested hotel</a>
         </div>
     </div>
     
