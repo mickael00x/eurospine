@@ -245,25 +245,25 @@ window.addEventListener("load", function() {
     
     
 
-    
-    inputYes.addEventListener("click", function() {
-        document.querySelector(".inputs-validation").setAttribute("style", "display: block");
-        document.querySelector(".inputs-validation-infos").setAttribute("style", "display: block");
-    });
+    if (inputYes) {
+        inputYes.addEventListener("click", function () {
+            document.querySelector(".inputs-validation").setAttribute("style", "display: block");
+            document.querySelector(".inputs-validation-infos").setAttribute("style", "display: block");
+        });
 
-    inputNo.addEventListener("click", function() {
-        document.querySelector(".inputs-validation").setAttribute("style", "display: none");
-        window.location = "/shop";
-    })
+        inputNo.addEventListener("click", function () {
+            document.querySelector(".inputs-validation").setAttribute("style", "display: none");
+            window.location = "/shop";
+        })
 
 
-    button.addEventListener("click", function() {
-        if(inputText.value === "eurospine" && inputYes.checked) {
-            window.location = "/shop?member=deleguates";
-        } 
-    })
+        button.addEventListener("click", function () {
+            if (inputText.value === "eurospine" && inputYes.checked) {
+                window.location = "/shop?member=deleguates";
+            }
+        })
 
-    
+    }
     function getSiblings(element, type){ 
         let arraySib = []; 
         if ( type == 'prev' ){ 
@@ -280,6 +280,12 @@ window.addEventListener("load", function() {
 
 
     
+    // Checkout Field
+
+    const postCodeFieldLabel = document.querySelector('#billing_postcode label');
+    if (postCodeFieldLabel.classList.contains("screen-reader-text")) {
+        postCodeFieldLabel.classList.remove('screen-reader-text');
+    }
 
     
 
