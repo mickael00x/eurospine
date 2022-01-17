@@ -282,7 +282,7 @@ window.addEventListener("load", function() {
     
     // Checkout Field
 
-    const postCodeFieldLabel = document.querySelector('#billing_postcode label');
+    const postCodeFieldLabel = document.querySelector('#billing_postcode_field label');
     if (postCodeFieldLabel.classList.contains("screen-reader-text")) {
         postCodeFieldLabel.classList.remove('screen-reader-text');
     }
