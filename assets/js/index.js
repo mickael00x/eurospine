@@ -188,7 +188,7 @@ window.addEventListener("load", function() {
                         removeItem(36);
                     }
 
-                    console.log(cartIDs);
+
                     
                     checkbox.parentElement.classList.add("product-selected");
 
@@ -233,16 +233,9 @@ window.addEventListener("load", function() {
                 
             }
 
-            document.querySelector("#customCheckout").setAttribute("style", "display: flex");
-            
-        } )
-        
-
-
-        
+            document.querySelector("#customCheckout").setAttribute("style", "display: flex");   
+        })
     })
-    
-    
     
 
     if (inputYes) {
