@@ -281,13 +281,51 @@ window.addEventListener("load", function() {
 
     
     // Checkout Field
-
+    // PostCode
     const postCodeFieldLabel = document.querySelector('#billing_postcode_field label');
-    if (postCodeFieldLabel.classList.contains("screen-reader-text")) {
+    if (postCodeFieldLabel && postCodeFieldLabel.classList.contains("screen-reader-text")) {
         postCodeFieldLabel.classList.remove('screen-reader-text');
     }
 
-    
+    // Conditionnal field
+    const conditionnalClass = 'wooccm-conditional-child';
+    const otherAllergiesInput = document.querySelector('#billing_wooccm16_field input[value="Other"]');
+    const dietarySelect = document.querySelector('#billing_wooccm17_field select');
+    const otherAllergiesContainer = document.getElementById('billing_wooccm18_field');
+    const otherDietaryContainer = document.getElementById('billing_wooccm19_field');
+
+    if (dietarySelect) {
+        dietarySelect.addEventListener('change',
+            function (event) {
+                elem = otherDietaryContainer;
+                if (event.target.value = 'other') {
+                    if (otherDietaryContainer.classList.contains(conditionnalClass)) {
+                        elem.classList.remove(conditionnalClass)
+                    }
+                } else {
+                    if (!elem.classList.contains(conditionnalClass)) {
+                        elem.classList.add(conditionnalClass)
+                    }
+                }
+            }
+        );
+    }
+    if (otherAllergiesInput) {
+        otherAllergiesInput.addEventListener('change',
+            function (event) {
+                elem = otherAllergiesContainer;
+                if (event.target.value = 'other') {
+                    if (elem.classList.contains(conditionnalClass)) {
+                        elem.classList.remove(conditionnalClass)
+                    }
+                } else {
+                    if (!elem.classList.contains(conditionnalClass)) {
+                        elem.classList.add(conditionnalClass)
+                    }
+                }
+            }
+        );
+    }
 
 
 })
