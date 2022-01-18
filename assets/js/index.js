@@ -214,7 +214,7 @@ window.addEventListener("load", function() {
                     selectedItems.append(item);
                     
                     if(cartIDs !== []) {
-                        checkoutButton.href = "order/?add-to-cart=" + cartIDs + "&empty-cart";
+                        checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart";
                     }
                     
             } else {
@@ -225,7 +225,7 @@ window.addEventListener("load", function() {
                     selectedItemsInfos.remove();                   
                     cartIDs.splice(index, 1);
                     if(cartIDs !== []) {
-                        checkoutButton.href = "order/?add-to-cart=" + cartIDs + "&empty-cart";
+                        checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart";
                     }
                 }
                 checkbox.parentElement.classList.remove("product-selected");

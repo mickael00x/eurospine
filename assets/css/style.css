@@ -1,4 +1,4 @@
-*, 
+*,
 *::before,
 *::after {
     margin: 0;
@@ -17,7 +17,7 @@ body {
     box-sizing: border-box;
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
-    color:#1D1D1D;
+    color: #1D1D1D;
 }
 
 h3 {
@@ -34,25 +34,31 @@ h3 {
     justify-content: space-between;
     align-items: center;
 }
+
 .nav-menu {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .nav-item {
     margin-right: 20px;
 }
+
 .nav-link {
     text-decoration: none;
     color: #1D1D1D;
     transition: all .3s;
 }
+
 .nav-link:hover {
     color: #0079A7;
 }
+
 .woocommerce-error {
-    display:none;
+    display: none;
 }
+
 .main-products {
     background-color: #efefef;
 }
@@ -65,14 +71,17 @@ h3 {
     align-items: center;
     flex-direction: column;
 }
-.yes-no-inputs{
+
+.yes-no-inputs {
     display: flex;
     margin-top: 35px;
     margin-bottom: 35px;
 }
+
 .input-homepage {
     display: none;
 }
+
 .label-homepage {
     cursor: pointer;
     border: 1px solid #D7D7D7;
@@ -85,9 +94,11 @@ h3 {
 .inputs-validation {
     display: none;
 }
+
 #order_review_heading {
     margin-bottom: 10px;
 }
+
 .inputs-validation-infos {
     display: none;
     max-width: 800px;
@@ -97,12 +108,14 @@ h3 {
     border-radius: 20px;
     margin-top: 20px;
 }
+
 #input-validation {
     border: 1px solid #D7D7D7;
     padding: 15px 40px;
     border-radius: 20px;
     font-size: 20px;
 }
+
 .input-box {
     display: flex;
     flex-direction: column;
@@ -125,6 +138,7 @@ button#input-button {
     cursor: pointer;
     font-size: 20px;
 }
+
 .page-products {
     display: flex;
     width: 100%;
@@ -150,33 +164,42 @@ button#input-button {
     font-size: 20px;
     transition: all .2s ease-in-out;
 }
+
 .item-in-cart {
     display: flex;
     width: 100%;
     flex-direction: column;
 }
+
 .items {
     display: flex;
+    align-content: center;
+    align-items: center;
 }
+
 .selected-product-title {
     margin-right: 20px;
 }
+
 .recap-title {
     display: flex;
 }
+
 .selected-product-price {
     font-weight: bold;
 }
+
 .custom-checkout-button {
     background-color: #FFFFFF;
     color: #1D1D1D;
-    border:1px solid #FFFFFF;
+    border: 1px solid #FFFFFF;
     padding: 10px 30px;
     border-radius: 100px;
     text-decoration: none;
     font-weight: 600;
     transition: all .3s ease-in-out;
 }
+
 .custom-checkout-button:hover {
     background-color: #1D1D1D;
     color: #FFFFFF;
@@ -197,21 +220,26 @@ button#input-button {
 .woocommerce-notices-wrapper {
     display: none;
 }
-.woocommerce-checkout > .single-page > .woocommerce {
+
+.woocommerce-checkout>.single-page>.woocommerce {
     display: flex;
     flex-direction: column;
     padding-top: 0;
 }
+
 #checkout {
     display: flex;
     flex-direction: column;
 }
+
 #order_review {
     display: flex;
 }
+
 #payment {
     margin-left: 40px;
 }
+
 .woocommerce form.checkout_coupon, .woocommerce-checkout #payment, .woocommerce table.shop_table {
     border-radius: 20px;
     margin-top: 0;
@@ -222,8 +250,9 @@ button#input-button {
     display: flex;
     justify-content: start;
     align-items: center;
-    
+
 }
+
 .days-day {
     font-size: 18px;
     font-weight: 700;
@@ -236,13 +265,14 @@ button#input-button {
     justify-content: flex-start;
     align-items: center;
 }
+
 .day-2 {
     grid-column: 1 / 2;
     grid-row: 3 / 5;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    
+
 }
 
 
@@ -263,6 +293,7 @@ button#input-button {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
+
 .day-2-start {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
@@ -272,6 +303,7 @@ button#input-button {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
 }
+
 .day-3-start {
     grid-column: 2 / 3;
     grid-row: 5 / 6;
@@ -289,11 +321,13 @@ button#input-button {
     grid-template-rows: repeat(6, 120px);
     grid-gap: 10px;
     padding-top: 20px;
-} 
-.payment_method_monetico > img {
+}
+
+.payment_method_monetico>img {
     width: auto;
 }
-.product { 
+
+.product {
     padding: 25px;
     border-radius: 20px;
     position: relative;
@@ -305,6 +339,7 @@ button#input-button {
     align-items: center;
     text-align: center;
 }
+
 #product-selection {
     position: absolute;
     top: 0;
@@ -314,6 +349,7 @@ button#input-button {
     opacity: 0;
     cursor: pointer;
 }
+
 .notes {
     margin-left: 20px;
     font-weight: 400;
@@ -324,6 +360,7 @@ button#input-button {
     border-radius: 20px;
     position: relative;
 }
+
 .notes:hover .notes-infos {
     display: block;
 }
@@ -341,68 +378,86 @@ button#input-button {
     width: 600px;
     cursor: help;
 }
+
 .product-selected {
     border: 5px solid #0079A7 !important;
 }
+
 .product-title {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
+
+.product-title-real {
+    padding: 10px 0;
+}
+
+
+.product-title-meta {
+    font-weight: normal;
+}
+
+.product-title-meta .product-title-mod {
+    font-size: 16px;
+}
+
+.product-title-meta .product-title-time {
+    font-size: 14px;
+    font-style: italic;
+    color: #222;
+}
+
+.selected-product-title {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.selected-product-title .product-title-real {
+    padding: 5px 10px;
+}
+
 .product-price {
     font-weight: 700;
     margin-top: 10px;
-    display:none;
+    display: none;
 }
 
 .product-description {
     display: none;
 }
+
 .advanced-module-2-revisions-and-complications-management-no,
 .advanced-module-2-revisions-and-complications-management-yes {
     grid-column: 5 / 6;
     grid-row: 4 / 6;
 }
-.advanced-module-2-revisions-and-complications-management-no > .product-title,
-.advanced-module-2-revisions-and-complications-management-yes > .product-title {
-    color: #D07071;
 
-}
 .advanced-module-1-extended-indications-and-advanced-operative-techniques-no,
 .advanced-module-1-extended-indications-and-advanced-operative-techniques-yes {
     grid-column: 5 / 6;
     grid-row: 1 / 4;
 }
-.advanced-module-1-extended-indications-and-advanced-operative-techniques-no > .product-title,
-.advanced-module-1-extended-indications-and-advanced-operative-techniques-yes > .product-title {
-    
-    color: #574040;
-    
-}
 
-.module-6-using-literature-to-inform-my-practice-no, 
+
+.module-6-using-literature-to-inform-my-practice-no,
 .module-6-using-literature-to-inform-my-practice-yes {
-    
+
     grid-column: 4 / 5;
     grid-row: 2 / 3;
 }
 
-.module-6-using-literature-to-inform-my-practice-no > .product-title, 
-.module-6-using-literature-to-inform-my-practice-yes > .product-title {
-    color: #AF8F30;
-    
-}
 
 .module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no-2,
 .module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes-2 {
-    
+
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-}
-
-.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no-2 > .product-title,
-.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes-2 > .product-title {
-    color: #3F5258;
 }
 
 .module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no,
@@ -411,40 +466,27 @@ button#input-button {
     grid-row: 2 / 3;
 }
 
-.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-no > .product-title,
-.module-5-tumours-and-inflammatory-diseases-of-the-spine-cohort-1-yes > .product-title {
-    color: #3F5258;
-}
 .module-4-trauma-cohort-1-no-2,
 .module-4-trauma-cohort-1-yes-2 {
     grid-column: 3 / 4;
     grid-row: 6 / 7;
 }
-.module-4-trauma-cohort-1-no-2 > .product-title,
-.module-4-trauma-cohort-1-yes-2 > .product-title {
-    color: #758D56;
-}
+
+
 
 .module-4-trauma-cohort-1-no,
 .module-4-trauma-cohort-1-yes {
     grid-column: 3 / 4;
     grid-row: 4 / 5;
-    
+
 }
 
-.module-4-trauma-cohort-1-no > .product-title,
-.module-4-trauma-cohort-1-yes > .product-title {
-    color: #758D56;
-}
+
 .module-3-spinal-deformities-cohort-1-no-2,
 .module-3-spinal-deformities-cohort-1-yes-2 {
-    
+
     grid-column: 2 / 3;
-    grid-row: 3 / 4;   
-}
-.module-3-spinal-deformities-cohort-1-no-2 > .product-title,
-.module-3-spinal-deformities-cohort-1-yes-2 > .product-title {
-    color: #99595A;
+    grid-row: 3 / 4;
 }
 
 
@@ -454,71 +496,84 @@ button#input-button {
     grid-row: 2 / 3;
 }
 
-.module-3-spinal-deformities-cohort-1-no > .product-title,
-.module-3-spinal-deformities-cohort-1-yes > .product-title {
-    color: #99595A;
-}
+
 .module-2-degenerative-diseases-of-the-spine-cohort-1-no,
 .module-2-degenerative-diseases-of-the-spine-cohort-1-yes {
-    
+
     grid-column: 1 / 2;
     grid-row: 4 / 6;
 }
-.module-2-degenerative-diseases-of-the-spine-cohort-1-no > .product-title,
-.module-2-degenerative-diseases-of-the-spine-cohort-1-yes > .product-title {
-    color: #607699;
-}
+
 .module-2-degenerative-diseases-of-the-spine-cohort-1-no-2,
 .module-2-degenerative-diseases-of-the-spine-cohort-1-yes-2 {
-    
+
     grid-column: 2 / 3;
     grid-row: 5 / 7;
 }
 
-.module-2-degenerative-diseases-of-the-spine-cohort-1-no-2 > .product-title,
-.module-2-degenerative-diseases-of-the-spine-cohort-1-yes-2 > .product-title {
-    color: #607699;
-}
-
-
 .module-1-basic-comprehensive-course-cohort-1-no,
 .module-1-basic-comprehensive-course-cohort-1-yes {
-    
+
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
 
-.module-1-basic-comprehensive-course-cohort-1-no  > .product-title,
-.module-1-basic-comprehensive-course-cohort-1-yes  > .product-title {
-    color: #685A74;
-}
 
-
-.module-1-basic-comprehensive-course-cohort-1-no-2, 
+.module-1-basic-comprehensive-course-cohort-1-no-2,
 .module-1-basic-comprehensive-course-cohort-1-yes-2 {
-   
+
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 }
-.module-1-basic-comprehensive-course-cohort-1-no-2  > .product-title, 
-.module-1-basic-comprehensive-course-cohort-1-yes-2  > .product-title {
-    color: #685A74;
-}
+
 
 .empty-product {
     background-color: #f7f7f7;
     border-radius: 20px;
 }
 
+
+.euro-mod1>.product-title {
+    color: #685A74;
+}
+
+.euro-mod1a>.product-title {
+    color: #574040;
+}
+
+.euro-mod2>.product-title {
+    color: #607699;
+}
+
+.euro-mod2a>.product-title {
+    color: #D07071;
+}
+
+.euro-mod3>.product-title {
+    color: #99595A;
+}
+
+.euro-mod4>.product-title {
+    color: #758D56;
+}
+
+.euro-mod5>.product-title {
+    color: #3F5258;
+}
+
+.euro-mod6>.product-title {
+    color: #AF8F30;
+}
+
 /* ====== UTILITIES ====== */
 
-.display-none {
+.display-none {
     display: none;
 }
 
 /* ====== CHECKOUT ====== */
 
-.single-page > .woocommerce, .woocommerce-breadcrumb, .single-page{
+.single-page>.woocommerce, .woocommerce-breadcrumb, .single-page {
     padding: 50px 100px;
 }
 
@@ -533,6 +588,7 @@ img {
     height: auto;
     width: auto;
 }
+
 .eurospine-logo {
     width: 60px;
     max-width: 60px;
@@ -546,15 +602,18 @@ img {
     border-top: 1px solid #D7D7D7;
     padding-top: 30px;
 }
+
 .woocommerce-billing-fields {
     margin-bottom: 30px;
     padding: 20px;
     background-color: #F2F2F2;
     border-radius: 20px;
 }
+
 #billing_email_field, #billing_country_field {
     padding-bottom: 20px;
 }
+
 .woocommerce form .form-row-last, .woocommerce-page form .form-row-last {
     float: left;
 }
@@ -571,90 +630,103 @@ img {
 
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
     background-color: #FFFFFF;
-    color: #0079A7;;
+    color: #0079A7;
+    ;
 }
+
 .woocommerce-cart .woocommerce-cart-form, .woocommerce-cart .cart-collaterals {
     padding: 0 400px;
 }
 
-.woocommerce-cart .woocommerce-breadcrumb {
-    
-}
+.woocommerce-cart .woocommerce-breadcrumb {}
+
 @media screen and (min-width: 1146px) {
     html {
         overflow-x: hidden;
         overflow-y: scroll;
     }
 }
-@media screen and (max-width: 1750px) {
-    
-    
-}
+
+@media screen and (max-width: 1750px) {}
+
 @media screen and (max-width: 1505px) {
     .days-day {
-        font-size: 16px;    
-    }
-    .days {
-        padding:10px;
+        font-size: 16px;
     }
 
-    
+    .days {
+        padding: 10px;
+    }
+
+
 }
+
 @media screen and (max-width: 1233px) {
     .days-day {
-        font-size: 16px;    
-    }
-    .days {
-        padding:10px;
+        font-size: 16px;
     }
 
-    
+    .days {
+        padding: 10px;
+    }
+
+
 }
+
 @media screen and (max-width: 1145px) {
     html {
         overflow: scroll;
     }
+
     body {
         font-size: 1.4rem;
     }
-    
+
     .product {
         padding: 20px;
     }
+
     .product-title, .days-day {
         font-size: 14px;
     }
+
     #customCheckout {
-        padding:20px;
+        padding: 20px;
         font-size: 1.4rem;
     }
+
     .selected-product-title {
         margin-right: 5px;
     }
+
     .days {
         flex: 0 0 15%;
     }
 }
 
 @media screen and (max-width: 760px) {
-    .single-page > .woocommerce, .woocommerce-breadcrumb {
+    .single-page>.woocommerce, .woocommerce-breadcrumb {
         padding: 10px;
     }
+
     .product-title {
         font-size: 12px;
     }
+
     .days-day {
         font-size: 10px;
     }
+
     .nav {
         width: 200%;
     }
+
     .days {
         flex: 0 0 20%;
     }
+
     .notes-infos {
         left: -10px;
         bottom: 30px;
     }
 }
-
