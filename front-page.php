@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="homepage">
-    <h2>Are you a Eurospine member?</h2>
+    <h2>Are you a EUROSPINE member?</h2>
     <div class="input-box">
         <div class="yes-no-inputs">
             <div class="input-group">
@@ -15,11 +15,11 @@
         </div>
         
         <div class="inputs-validation">
-            <input type="text" id="input-validation" placeholder="Enter your code here..." name="input-validation">
+            <input type="text" id="input-validation" placeholder="Enter member discount code here  " name="input-validation">
             <button type="button" id="input-button">Submit</button>
         </div>
         <div class="inputs-validation-infos">
-            <p>If yes, please enter the discount code provided by EUROSPINE to its members.  <br>
+            <p>
             You are eligible to receive a discount code if you are members in good standing of EUROSPINE. <br>
             In other words, you must have paid the EUROSPINE membership fees for 2022.  <br>
             <p>Membership fees can be paid online directly in your EUROSPINE <a href="https://www.m-anage.com/Home/Index/Society/EUROSPINE-MB/en-GB">membership account: </a> </p>
@@ -28,3 +28,4 @@
         </div>
     </div>
 </main>
+

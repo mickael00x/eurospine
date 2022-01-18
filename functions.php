@@ -2,11 +2,10 @@
 
 // =========== register CSS ===============
 function eurospine_custom_theme() {
-    wp_register_style( 'custom_css' , get_template_directory_uri() . '/assets/css/style.css', false, '1.0');
+    wp_register_style( 'custom_css' , get_template_directory_uri() . '/assets/css/style.css', false, filemtime(__DIR__ . "/assets/css/style.css") );
     wp_register_style( 'roboto_font_cdn' , 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', false, '1.0');
-    wp_register_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css', false, '1.0');
 
-    wp_register_script( 'script_js', get_template_directory_uri() . '/assets/js/index.js', false, '1.0');
+    wp_register_script( 'script_js', get_template_directory_uri() . '/assets/js/index.js', false, filemtime(__DIR__ . "/assets/js/index.js") );
     
     wp_enqueue_style( 'custom_css' );
     wp_enqueue_style( 'roboto_font_cdn' );
