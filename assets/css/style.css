@@ -422,6 +422,10 @@ button#input-button {
     padding: 5px 10px;
 }
 
+.selected-product-title .product-title-meta .product-title-time {
+    display: none;
+}
+
 .product-price {
     font-weight: 700;
     margin-top: 10px;

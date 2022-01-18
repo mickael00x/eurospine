@@ -134,7 +134,7 @@ if (class_exists('WooCommerce')) {
 }
 
 
-//=== function 
+//=== function templating
 
 function extractClass($product_title)
 {
@@ -159,6 +159,7 @@ function extractClass($product_title)
 
     return $class;
 }
+
 function formatTitle($product_title)
 {
     $arrayTitle = explode('/', $product_title, 3);
@@ -170,3 +171,28 @@ function formatTitle($product_title)
 
     return $title . $meta;
 }
+
+function formatTitleCart($product_title)
+{
+    $arrayTitle = explode('/', $product_title, 3);
+    $title = '<div><b>' . $arrayTitle[0] . '</b></div>';
+    $meta =  '<div>' . $arrayTitle[1] . '</div>' . $arrayTitle[2];
+
+    return $title . $meta;
+}
+
+// Hooks / Filters 
+
+function filter_woocommerce_order_item_name($item_name, $item)
+{
+    return formatTitleCart($item_name);
+};
+
+function filter_woocommerce_cart_item_name($product_get_name, $cart_item, $cart_item_key)
+{
+    return  formatTitleCart($product_get_name);
+};
+
+// add the filter 
+add_filter('woocommerce_cart_item_name', 'filter_woocommerce_cart_item_name', 10, 3);
+add_filter('woocommerce_order_item_name', 'filter_woocommerce_order_item_name', 10, 2);
