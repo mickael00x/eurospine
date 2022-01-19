@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Customer processing order email
+ * Customer on-hold order email
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/emails/customer-processing-order.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/emails/customer-on-hold-order.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -16,9 +16,7 @@
  * @version 3.7.0
  */
 
-if (!defined('ABSPATH')) {
-	exit;
-}
+defined('ABSPATH') || exit;
 
 /*
  * @hooked WC_Emails::email_header() Output the email header
@@ -26,9 +24,11 @@ if (!defined('ABSPATH')) {
 do_action('woocommerce_email_header', $email_heading, $email); ?>
 
 <?php /* translators: %s: Customer first name */ ?>
+
 <p><?php printf(esc_html__('Dear %s,', 'woocommerce'), esc_html($order->get_billing_first_name() . ' ' . $order->get_billing_last_name())); ?></p>
-<?php /* translators: %s: Order number */ ?>
-<p><?php printf(esc_html__('Just to let you know &mdash; we\'ve received your order #%s, and it is now being processed:', 'woocommerce'), esc_html($order->get_order_number())); ?></p>
+
+<p><?php esc_html_e('Thank you for interest in the EUROSPINE EduWeek courses. Your order has been received but will be on hold until the payment process has been completed.', 'woocommerce'); ?></p>
+<p><?php esc_html_e('To secure your place at EduWeek please ensure to complete the payment process as soon as possible.', 'woocommerce'); ?></p>
 
 <?php
 
