@@ -64,12 +64,30 @@ h3 {
 }
 
 .homepage {
-    width: 100vw;
-    height: 100vh;
+
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/shutterstock_1487355809.jpeg");
+    filter: blur(2px) contrast(50%) opacity(90%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: saturation;
+    z-index: -1;
 }
 
 .yes-no-inputs {
@@ -267,6 +285,7 @@ button#input-button {
 }
 
 .day-2 {
+    position: relative;
     grid-column: 1 / 2;
     grid-row: 3 / 5;
     display: flex;
@@ -275,6 +294,16 @@ button#input-button {
 
 }
 
+.day-2::before {
+    position: absolute;
+    top: -5px;
+    bottom: -7px;
+    left: -20px;
+    width: 10vw;
+    content: "";
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
 
 .day-3 {
     grid-column: 1 / 2;
@@ -283,6 +312,8 @@ button#input-button {
     justify-content: flex-start;
     align-items: center;
 }
+
+
 
 .day-1-start {
     grid-column: 2 / 3;
@@ -322,6 +353,8 @@ button#input-button {
     grid-gap: 10px;
     padding-top: 20px;
 }
+
+
 
 .payment_method_monetico>img {
     width: auto;
@@ -536,6 +569,13 @@ button#input-button {
     border-radius: 20px;
 }
 
+.products div:nth-child(n+11).empty-product {
+    opacity: 0.8;
+}
+
+.products div:nth-child(n+21).empty-product {
+    opacity: 1;
+}
 
 .euro-mod1>.product-title {
     color: #685A74;
