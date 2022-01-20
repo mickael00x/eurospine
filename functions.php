@@ -185,7 +185,7 @@ function formatTitleCart($product_title)
 
 function filter_woocommerce_order_item_name($item_name, $item)
 {
-    return formatTitleCart($item_name);
+    return formatTitleCart(strip_tags($item_name));
 };
 
 function filter_woocommerce_cart_item_name($product_get_name, $cart_item, $cart_item_key)

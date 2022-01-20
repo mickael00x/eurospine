@@ -1,3 +1,11 @@
+:root {
+    --eurospine-red: rgb(226, 0, 54);
+    --eurospine-blue: rgb(1, 48, 96);
+
+
+}
+
+
 *,
 *::before,
 *::after {
@@ -20,6 +28,10 @@ body {
     color: #1D1D1D;
 }
 
+.txt-blue {
+    color: var(--eurospine-blue);
+}
+
 h3 {
     margin-top: 10px;
 }
@@ -33,6 +45,16 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-title h1 {
+    font-weight: bold;
 }
 
 .nav-menu {
@@ -71,7 +93,7 @@ h3 {
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -83,11 +105,22 @@ h3 {
     width: 100%;
     height: 100%;
     background-image: url("../img/shutterstock_1487355809.jpeg");
-    filter: blur(2px) contrast(50%) opacity(90%);
+    filter: blur(2px) contrast(40%) opacity(60%);
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: saturation;
     z-index: -1;
+}
+
+.homepage h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px auto 35px auto;
+}
+
+.eurospin-logo {
+    width: 250px;
+    height: auto;
 }
 
 .yes-no-inputs {
@@ -102,33 +135,46 @@ h3 {
 
 .label-homepage {
     cursor: pointer;
-    border: 1px solid #D7D7D7;
+    border: 2px solid var(--eurospine-blue);
+    background: #f7f7f7;
     padding: 15px 40px;
     margin-right: 20px;
     border-radius: 20px;
     font-size: 20px;
 }
 
-.inputs-validation {
-    display: none;
+.input-homepage:checked+.label-homepage {
+    background: var(--eurospine-blue);
+    color: #f7f7f7;
 }
 
 #order_review_heading {
     margin-bottom: 10px;
 }
 
+.inputs-validation {
+    text-align: center;
+}
+
+.inputs-validation p {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .inputs-validation-infos {
-    display: none;
-    max-width: 800px;
-    background-color: #F2F2F2;
-    border: 1px solid #D7D7D7;
+    max-width: 780px;
     padding: 20px;
-    border-radius: 20px;
     margin-top: 20px;
+    text-align: center;
+}
+
+.inputs-validation-infos p {
+    margin: 5px 0;
 }
 
 #input-validation {
-    border: 1px solid #D7D7D7;
+    border: 2px solid var(--eurospine-blue);
     padding: 15px 40px;
     border-radius: 20px;
     font-size: 20px;
@@ -148,10 +194,10 @@ h3 {
 
 
 button#input-button {
-    padding: 15px;
+    padding: 15px 40px;
     border-radius: 20px;
     border: none;
-    background: #1D1D1D;
+    background: var(--eurospine-red);
     color: #FFFFFF;
     cursor: pointer;
     font-size: 20px;
@@ -169,24 +215,66 @@ button#input-button {
     position: fixed;
     bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
     width: 100%;
-    background-color: #2B2B2B;
-    color: #FFFFFF;
-    z-index: 1000;
     min-height: 80px;
     max-height: max-content;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
+    color: #FFFFFF;
+    background-color: var(--eurospine-blue);
+    z-index: 1000;
     font-size: 20px;
     transition: all .2s ease-in-out;
 }
 
-.item-in-cart {
+#customCheckout .emptySelectionCart {
+    display: none;
+}
+
+#customCheckout.custom-checkout-empty .emptySelectionCart {
     display: flex;
-    width: 100%;
+}
+
+#customCheckout.custom-checkout-empty .recapItemsInCart {
+    display: none;
+}
+
+#customCheckout .recapItemsInCart {
+    flex: 1 0 auto;
+    display: flex;
+    padding-right: 10px;
+}
+
+.item-in-cart {
+    flex: 1 0 auto;
+    display: flex;
     flex-direction: column;
+    max-height: 20vh;
+    overflow-y: auto;
+    scrollbar-width: 5px;
+    scrollbar-color: #FFF rgba(0, 0, 0, .5);
+}
+
+/* width */
+.item-in-cart::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.item-in-cart::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .5);
+}
+
+/* Handle */
+.item-in-cart::-webkit-scrollbar-thumb {
+    background: #FFF;
+}
+
+/* Handle on hover */
+.item-in-cart::-webkit-scrollbar-thumb:hover {
+    background: var(--eurospine-red);
 }
 
 .items {
@@ -200,7 +288,10 @@ button#input-button {
 }
 
 .recap-title {
+    flex: 0 0 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .selected-product-price {
@@ -208,9 +299,9 @@ button#input-button {
 }
 
 .custom-checkout-button {
-    background-color: #FFFFFF;
-    color: #1D1D1D;
-    border: 1px solid #FFFFFF;
+    background-color: var(--eurospine-red);
+    color: #FFF;
+    border: 3px solid var(--eurospine-red);
     padding: 10px 30px;
     border-radius: 100px;
     text-decoration: none;
@@ -219,8 +310,7 @@ button#input-button {
 }
 
 .custom-checkout-button:hover {
-    background-color: #1D1D1D;
-    color: #FFFFFF;
+    border: 2px solid #FFF;
 }
 
 .days {
@@ -373,7 +463,7 @@ button#input-button {
     text-align: center;
 }
 
-#product-selection {
+input.product-checkbox {
     position: absolute;
     top: 0;
     left: 0;
@@ -384,14 +474,15 @@ button#input-button {
 }
 
 .notes {
+    position: relative;
+    padding: 15px 40px;
     margin-left: 20px;
-    font-weight: 400;
-    background-color: #F2F2F2;
-    color: #000;
-    padding: 2px 10px;
     margin-bottom: 3px;
     border-radius: 20px;
-    position: relative;
+    background-color: var(--eurospine-blue);
+    color: #F2F2F2;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .notes:hover .notes-infos {
@@ -403,12 +494,15 @@ button#input-button {
     position: absolute;
     top: 20px;
     right: 90px;
-    z-index: 10000;
-    background-color: #FFF;
+    padding: 5px 20px 20px 20px;
     border: 1px solid #D7D7D7;
-    padding: 10px;
     border-radius: 20px;
     width: 600px;
+    background-color: #FFF;
+    color: var(--eurospine-blue);
+    font-size: 16px;
+    font-weight: normal;
+    z-index: 10000;
     cursor: help;
 }
 
@@ -682,7 +776,7 @@ img {
     padding: 0 400px;
 }
 
-.woocommerce-cart .woocommerce-breadcrumb {}
+/* .woocommerce-cart .woocommerce-breadcrumb {} */
 
 @media screen and (min-width: 1146px) {
     html {

@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 <main class="homepage">
-    <h2>Are you a EUROSPINE member?</h2>
+    <img class="eurospin-logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/EUROSPINE_FB.png" alt="logo_eurospine">
+    <h1>June 2022 EduWeek registration</h1>
+    <h2 class="txt-blue">Are you a EUROSPINE member?</h2>
     <div class="input-box">
         <div class="yes-no-inputs">
             <div class="input-group">
@@ -15,8 +17,9 @@
         </div>
 
         <div class="inputs-validation">
+            <p class="txt-blue">If you have a coupon code, please apply it below.</p>
             <input type="text" id="input-validation" placeholder="Enter member discount code here  " name="input-validation">
-            <button type="button" id="input-button">Submit</button>
+            <p><button type="button" id="input-button">Validate</button></p>
         </div>
         <div class="inputs-validation-infos">
             <p>Please note that, if you already are a EUROSPINE member and wish to take advantage of the EUROSPINE member discount when registering for the course, you must ensure you have settled your 2022 membership fee before starting your course registration. You can do this in your <a href="https://www.m-anage.com/Home/Index/Society/EUROSPINE-MB/en-GB">membership account</a>.</p>

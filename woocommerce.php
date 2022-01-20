@@ -1,9 +1,16 @@
-<?php get_header(); ?>
-
+<?php get_header();
+include("nav.php"); ?>
 <?php $checkout_url = wc_get_checkout_url(); ?>
 
 <main class="page-products">
-    <div id="customCheckout" style="display: none;">
+    <div id="customCheckout" class="custom-checkout-empty">
+        <div class="emptySelectionCart">
+            <div>Select the module you wish to attend</div>
+            <div>
+                <p>The registration fee covers the cost of the eLearning and live components of the course, coffee breaks and lunch.</p>
+                <p>Participants are required to book and pay for their travel and accommodation themselves.<br>This is not included in the registration fee. </p>
+            </div>
+        </div>
         <div class="recapItemsInCart">
             <span class="recap-title">Selected items:
 
@@ -11,9 +18,9 @@
             <span class="item-in-cart">
             </span>
         </div>
-        <div class="button-checkout" />
-        <a href="#" class="custom-checkout-button">Checkout</a>
-    </div>
+        <div class="button-checkout">
+            <a href="#" class="custom-checkout-button">Checkout</a>
+        </div>
     </div>
     <div class="days">
         <div class="days-day day-1">Monday <br> 27 June 2022</div>
@@ -53,21 +60,21 @@
                 $products->the_post();
                 $product = get_product($products->post->ID);
 
-                if ($_GET['member'] === "deleguates" && $product->post->post_excerpt == "member: Delegates") {
+                if (isset($_GET['member']) && $_GET['member'] === "deleguates" && $product->post->post_excerpt == "member: Delegates") {
                     echo "<div class='product " . $product->get_slug() . " " . extractClass($product->get_title()) . "'>";
                     echo "<div class='product-title'>" . formatTitle($product->get_title()) . "</div>";
                     echo "<div class='product-description'>" . get_the_excerpt($product->id) . "</div>";
                     echo "<div class='product-price'>" . $product->get_price_html() . "</div>";
-                    echo "<input type='checkbox' value=" . $product->get_id() . " id='product-selection'>";
+                    echo "<input type='checkbox' value=" . $product->get_id() . " class='product-checkbox'>";
                     echo "</div>";
                 }
 
-                if (is_null($_GET['member']) && $product->post->post_excerpt == "member: Visitors") {
+                if (!isset($_GET['member']) && $product->post->post_excerpt == "member: Visitors") {
                     echo "<div class='product " . $product->get_slug() . " " . extractClass($product->get_title()) . "'>";
                     echo "<div class='product-title'>" . formatTitle($product->get_title()) . "</div>";
                     echo "<div class='product-description'>" . get_the_excerpt($product->id) . "</div>";
                     echo "<div class='product-price'>" . $product->get_price_html() . "</div>";
-                    echo "<input type='checkbox' value=" . $product->get_id() . " id='product-selection'>";
+                    echo "<input type='checkbox' value=" . $product->get_id() . " class='product-checkbox'>";
                     echo "</div>";
                 }
 
