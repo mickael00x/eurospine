@@ -148,6 +148,12 @@ h3 {
     color: #f7f7f7;
 }
 
+.invalid-code{
+    background: red;
+    color: #FFF;
+    
+}
+
 #order_review_heading {
     margin-bottom: 10px;
 }
@@ -178,6 +184,7 @@ h3 {
     padding: 15px 40px;
     border-radius: 20px;
     font-size: 20px;
+    text-align: center;
 }
 
 .input-box {

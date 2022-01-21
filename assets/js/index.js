@@ -2,17 +2,14 @@ console.log("Javascript is working");
 
 window.addEventListener("load", function() {
     console.log("Everything is loaded");
-    
-    const inputText = document.querySelector("#input-validation");
-    const button = document.querySelector("#input-button");
-    const inputYes = document.querySelector("#input-homepage-yes");
-    const inputNo = document.querySelector("#input-homepage-no");
+    const formHomepage = document.getElementById('form-homepage');
     const checkoutButton = document.querySelector(".custom-checkout-button");
     const toPutInCart = document.querySelectorAll("input.product-checkbox");
     let cartIDs = [];
     let selectedItems = document.querySelector(".item-in-cart");
     let total = 0;
 
+    
     /**
      * 
      * @param {*} element 
@@ -294,24 +291,59 @@ window.addEventListener("load", function() {
     })
     
 
-    if (false &&inputYes) {
-        inputYes.addEventListener("click", function () {
-            document.querySelector(".inputs-validation").setAttribute("style", "display: block");
-            document.querySelector(".inputs-validation-infos").setAttribute("style", "display: block");
-        });
+    if (formHomepage !== null) {
+        console.log('homepage');
+        const inputYes = document.querySelector("#input-homepage-yes");
+        const inputNo = document.querySelector("#input-homepage-no");
+        const inputText = document.querySelector("#input-validation");
+        let invalidAlert = document.querySelector('.invalid-code');
+        const buttonSubmit = document.querySelector("#input-button");
+        const couponCode = ['EUROSPINE','EUROSPINE20']
 
-        inputNo.addEventListener("click", function () {
-            document.querySelector(".inputs-validation").setAttribute("style", "display: none");
-            window.location = "/shop";
-        })
+        function invalidCode() {
+            if (invalidAlert.classList.contains('display-none'))
+                invalidAlert.classList.remove('display-none')      
+        }
 
+        function hideInvalidCode() {
+            if (!invalidAlert.classList.contains('display-none'))
+                invalidAlert.classList.add('display-none')
+        }
 
-        button.addEventListener("click", function () {
-            if (inputText.value === "eurospine" && inputYes.checked) {
+        function formHomepageSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            let formData = new FormData(formHomepage);
+            const code = formData.get('input-validation');
+            const member = formData.get('input-homepage');
+
+            if (code === couponCode[0] && member !== null) {
                 window.location = "/shop?member=deleguates";
+                return;
             }
-        })
+        
+            if (code === couponCode[1] && member !== null) {
+                window.location = "/shop?coupon="+couponCode[1];
+                return;
+            }
 
+            if (code !== '' && couponCode.indexOf(code) === parseInt('-1')) {
+                invalidCode();
+                return;
+            }
+
+            if (member === '1' && code === "") {
+                invalidCode();
+                return;
+            }
+           
+            window.location = "/shop";
+        }
+
+
+        hideInvalidCode();
+        formHomepage.addEventListener('submit', formHomepageSubmit);
+        inputText.addEventListener('keyup', (e) => { hideInvalidCode() });
     }
 
     
