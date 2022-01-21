@@ -251,8 +251,8 @@ button#input-button {
     font-size: 18px;
 }
 
-#customCheckout > div > div:first-child {
-    flex: 0 1 220px; 
+#customCheckout>div>div:first-child {
+    flex: 0 1 220px;
     font-size: 24px;
     font-weight: bold;
 }
@@ -779,6 +779,14 @@ img {
     float: left;
 }
 
+.euro-terms {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.euro-terms li{
+    margin: 5px;
+}
 /* ====== CART ====== */
 
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
