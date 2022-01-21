@@ -14,11 +14,12 @@ include("nav.php"); ?>
         <div class="recapItemsInCart">
             <div class="recap-title">Selected items:</div>
             <div class="item-in-cart"></div>
+            <div class="button-checkout">
+                <div class="recap-total-container">Total: <span class="recap-total"></span></div>
+                <a href="#" class="custom-checkout-button">Checkout</a>
+            </div>
         </div>
-        <div class="button-checkout">
-            <div class="recap-total-container" style="display:none;">Total: <span class="recap-total"></span></div>
-            <a href="#" class="custom-checkout-button">Checkout</a>
-        </div>
+
     </div>
     <div class="days">
         <div class="days-day day-1">Monday <br> 27 June 2022</div>

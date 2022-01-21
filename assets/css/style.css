@@ -148,10 +148,10 @@ h3 {
     color: #f7f7f7;
 }
 
-.invalid-code{
+.invalid-code {
     background: red;
     color: #FFF;
-    
+
 }
 
 #order_review_heading {
@@ -251,7 +251,7 @@ button#input-button {
 #customCheckout .recapItemsInCart {
     flex: 1 0 auto;
     display: flex;
-    padding: 0 10px;
+    align-items: center;
 }
 
 .emptySelectionCart {
@@ -268,10 +268,12 @@ button#input-button {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    align-content: center;
     max-height: 20vh;
     overflow-y: auto;
     scrollbar-width: 5px;
     scrollbar-color: #FFF rgba(0, 0, 0, .5);
+    margin: 0 20px;
 }
 
 /* width */
@@ -791,9 +793,10 @@ img {
     padding-left: 20px;
 }
 
-.euro-terms li{
+.euro-terms li {
     margin: 5px;
 }
+
 /* ====== CART ====== */
 
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {

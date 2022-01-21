@@ -2,7 +2,7 @@ console.log("Javascript is working");
 
 window.addEventListener("load", function() {
     console.log("Everything is loaded");
-    const formHomepage = document.getElementById('form-homepage');
+    // Shop
     const checkoutButton = document.querySelector(".custom-checkout-button");
     const toPutInCart = document.querySelectorAll("input.product-checkbox");
     let cartIDs = [];
@@ -78,6 +78,11 @@ window.addEventListener("load", function() {
         if (inputCheckbox === null) {
             return false;
         }
+        if ( inputCheckbox.checked ) {
+            let price = document.querySelector(".items-" + productID + " .selected-product-price");
+            price = parseInt(price.innerHTML.replace(/\D/g, ""));
+            updateTotal( "-" + price );
+        }
         inputCheckbox.checked = false;
         inputCheckbox.parentElement.classList.remove("product-selected");
         let index = cartIDs.indexOf(inputCheckbox.value);
@@ -86,9 +91,7 @@ window.addEventListener("load", function() {
             selectedItemsInfos.remove();
             cartIDs.splice(index, 1);
         }
-        let price = document.querySelector(".items-" + productID + " .selected-product-price");
-        price = parseInt(price.innerHTML.replace(/\D/g, ""));
-        updateTotal( "-" + price );
+        
     }
 
     function updateVisibilitySelectionBar() {
@@ -290,6 +293,8 @@ window.addEventListener("load", function() {
         })
     })
     
+    // Homepage 
+    const formHomepage = document.getElementById('form-homepage');
 
     if (formHomepage !== null) {
         console.log('homepage');
@@ -314,7 +319,7 @@ window.addEventListener("load", function() {
             event.preventDefault();
             event.stopPropagation();
             let formData = new FormData(formHomepage);
-            const code = formData.get('input-validation');
+            const code = formData.get('input-validation').toUpperCase();
             const member = formData.get('input-homepage');
 
             if (code === couponCode[0] && member !== null) {
