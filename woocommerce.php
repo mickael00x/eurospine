@@ -12,13 +12,11 @@ include("nav.php"); ?>
             </div>
         </div>
         <div class="recapItemsInCart">
-            <span class="recap-title">Selected items:
-
-            </span>
-            <span class="item-in-cart">
-            </span>
+            <div class="recap-title">Selected items:</div>
+            <div class="item-in-cart"></div>
         </div>
         <div class="button-checkout">
+            <div class="recap-total-container" style="display:none;">Total: <span class="recap-total"></span></div>
             <a href="#" class="custom-checkout-button">Checkout</a>
         </div>
     </div>

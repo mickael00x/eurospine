@@ -18,7 +18,7 @@
 
         <div class="inputs-validation">
             <p class="txt-blue">If you have a coupon code, please apply it below.</p>
-            <input type="text" id="input-validation" placeholder="Enter member discount code here  " name="input-validation">
+            <input type="text" id="input-validation" placeholder="Enter code" name="input-validation">
             <p><button type="button" id="input-button">Validate</button></p>
         </div>
         <div class="inputs-validation-infos">

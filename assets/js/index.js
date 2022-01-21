@@ -11,6 +11,7 @@ window.addEventListener("load", function() {
     const toPutInCart = document.querySelectorAll("input.product-checkbox");
     let cartIDs = [];
     let selectedItems = document.querySelector(".item-in-cart");
+    let total = 0;
 
     /**
      * 
@@ -40,6 +41,11 @@ window.addEventListener("load", function() {
         return cartIDs.length;
     }
 
+    function updateTotal(value) {
+        const totalPrice = document.querySelector('.button-checkout .recap-total');
+        total = parseInt(total) + parseInt(value);
+        totalPrice.textContent = total + " €";
+    }
 
     function addItem(checkbox) { 
         checkbox.parentElement.classList.add("product-selected");
@@ -47,14 +53,14 @@ window.addEventListener("load", function() {
         let selectedTitle = getSiblings(checkbox, "prev")[2].innerHTML;
         let priceTag = getSiblings(checkbox, "prev")[0];
         
-        let title = document.createElement("p");
+        let title = document.createElement("div");
         title.classList.add("selected-product-title");
 
-        let item = document.createElement("p");
+        let item = document.createElement("div");
         item.classList.add("items");
         item.classList.add("items-" + checkbox.value);
         
-        let newPrice = document.createElement("p");
+        let newPrice = document.createElement("div");
         newPrice.classList.add("selected-product-price");
         newPrice.innerHTML = priceTag.innerHTML.replace(/\D/g, "");
         newPrice.innerHTML += "€";
@@ -62,6 +68,8 @@ window.addEventListener("load", function() {
         item.append(title);
         item.append(newPrice);
         selectedItems.append(item);
+
+        
     }
 
     /**
@@ -70,7 +78,9 @@ window.addEventListener("load", function() {
      */
     function removeItem(productID) {
         let inputCheckbox = document.querySelector(`input[value='${productID}']`);
-        if (inputCheckbox === null) return false;
+        if (inputCheckbox === null) {
+            return false;
+        }
         inputCheckbox.checked = false;
         inputCheckbox.parentElement.classList.remove("product-selected");
         let index = cartIDs.indexOf(inputCheckbox.value);
@@ -79,6 +89,9 @@ window.addEventListener("load", function() {
             selectedItemsInfos.remove();
             cartIDs.splice(index, 1);
         }
+        let price = document.querySelector(".items-" + productID + " .selected-product-price");
+        price = parseInt(price.innerHTML.replace(/\D/g, ""));
+        updateTotal( "-" + price );
     }
 
     function updateVisibilitySelectionBar() {
@@ -92,7 +105,11 @@ window.addEventListener("load", function() {
 
     toPutInCart.forEach(checkbox => {
         checkbox.addEventListener("click", () => {
-            if(checkbox.checked) {
+
+            let priceTag = getSiblings(checkbox, "prev")[0];
+            let price= priceTag.innerHTML.replace(/\D/g, "");
+            
+            if (checkbox.checked) {
                 console.log("checkbox clicked: ", checkbox.value);
                 cartIDs.push(checkbox.value);
                 
@@ -250,7 +267,7 @@ window.addEventListener("load", function() {
                 }
 
                 addItem(checkbox);
-                
+                updateTotal(price);
                 if(cartIDs !== []) {
                     checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart";
                 }
@@ -264,7 +281,10 @@ window.addEventListener("load", function() {
                     cartIDs.splice(index, 1);
                     if(cartIDs !== []) {
                         checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart";
+
                     }
+                
+                updateTotal(-price);
                 }
                 checkbox.parentElement.classList.remove("product-selected");
                 console.log(cartIDs);
