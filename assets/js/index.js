@@ -5,11 +5,19 @@ window.addEventListener("load", function() {
     // Shop
     const checkoutButton = document.querySelector(".custom-checkout-button");
     const toPutInCart = document.querySelectorAll("input.product-checkbox");
+    let urlCoupon = '';
     let cartIDs = [];
     let selectedItems = document.querySelector(".item-in-cart");
     let total = 0;
 
+    function getCoupon() { 
+        let urlParam = new URLSearchParams(window.location.search);
+        console.log(urlParam.get('code'));
+        if (urlParam.get('code') !== null)
+        urlCoupon += "&coupon_code=" + urlParam.get('code').toUpperCase();
+    }
     
+    getCoupon();
     /**
      * 
      * @param {*} element 
@@ -269,7 +277,7 @@ window.addEventListener("load", function() {
                 addItem(checkbox);
                 updateTotal(price);
                 if(cartIDs !== []) {
-                    checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart";
+                    checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart" + urlCoupon;
                 }
                 
             } else {
@@ -280,7 +288,7 @@ window.addEventListener("load", function() {
                     selectedItemsInfos.remove();                   
                     cartIDs.splice(index, 1);
                     if(cartIDs !== []) {
-                        checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart";
+                        checkoutButton.href = "/order/?add-to-cart=" + cartIDs + "&empty-cart" + urlCoupon;
 
                     }
                 
@@ -303,7 +311,7 @@ window.addEventListener("load", function() {
         const inputText = document.querySelector("#input-validation");
         let invalidAlert = document.querySelector('.invalid-code');
         const buttonSubmit = document.querySelector("#input-button");
-        const couponCode = ['EUROSPINE','EUROSPINE20']
+        const couponCode = ['EUROSPINE','EURO20']
 
         function invalidCode() {
             if (invalidAlert.classList.contains('display-none'))
@@ -328,7 +336,7 @@ window.addEventListener("load", function() {
             }
         
             if (code === couponCode[1] && member !== null) {
-                window.location = "/shop?coupon="+couponCode[1];
+                window.location = "/shop?code="+couponCode[1];
                 return;
             }
 

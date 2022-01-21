@@ -196,3 +196,45 @@ function filter_woocommerce_cart_item_name($product_get_name, $cart_item, $cart_
 // add the filter 
 add_filter('woocommerce_cart_item_name', 'filter_woocommerce_cart_item_name', 10, 3);
 add_filter('woocommerce_order_item_name', 'filter_woocommerce_order_item_name', 10, 2);
+
+
+function eurospine_woocommerce_coupon_links()
+{
+
+    // Sort si WooCommerce ou la session sont indisponibles.
+
+    if (!function_exists('WC') || !WC()->session) {
+        return;
+    }
+
+    // Pas d'AJAX
+
+    if (defined('DOING_AJAX') && DOING_AJAX) {
+        return;
+    }
+
+
+    $query_var = apply_filters('woocommerce_coupon_links_query_var', 'coupon_code');
+
+
+    if (empty($_GET[$query_var])) {
+        return;
+    }
+    // securise la chaine de caractère 
+    $coupon = sanitize_text_field($_GET[$query_var]);
+
+    // Crée un cookie de session à persister si le panier est vide
+
+    WC()->session->set_customer_session_cookie(true);
+
+    // Applique le code si c'est possible
+
+    if (!WC()->cart->has_discount($coupon)) {
+
+        // WC_Cart::add_discount() resanitizes le code coupon .
+
+        WC()->cart->add_discount($coupon);
+    }
+}
+add_action('wp_loaded', 'eurospine_woocommerce_coupon_links', 30);
+add_action('woocommerce_add_to_cart', 'eurospine_woocommerce_coupon_links');

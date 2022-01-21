@@ -385,6 +385,10 @@ button#input-button {
     margin-top: 0;
 }
 
+.woocommerce .checkout_coupon.woocommerce-form-coupon{
+    display:none !important;
+}
+
 .days-am-pm {
     color: #C1C1C1;
     display: flex;
