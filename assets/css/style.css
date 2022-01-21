@@ -77,9 +77,6 @@ h3 {
     color: #0079A7;
 }
 
-.woocommerce-error {
-    display: none;
-}
 
 .main-products {
     background-color: #efefef;
@@ -357,9 +354,6 @@ button#input-button {
     grid-gap: 10px;
 }
 
-.woocommerce-notices-wrapper {
-    display: none;
-}
 
 .woocommerce-checkout>.single-page>.woocommerce {
     display: flex;
