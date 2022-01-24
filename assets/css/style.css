@@ -379,8 +379,8 @@ button#input-button {
     margin-top: 0;
 }
 
-.woocommerce .checkout_coupon.woocommerce-form-coupon{
-    display:none !important;
+.woocommerce .checkout_coupon.woocommerce-form-coupon {
+    display: none !important;
 }
 
 .days-am-pm {
@@ -816,6 +816,38 @@ img {
 }
 
 /* .woocommerce-cart .woocommerce-breadcrumb {} */
+
+
+/* Order page  */
+.woocommerce-order {
+    padding: 20px;
+    border: 2px solid var(--eurospine-blue);
+    border-radius: 15px;
+}
+
+.woocommerce-order h2,
+.woocommerce-order h3,
+.woocommerce-order strong,
+.woocommerce-order b {
+    color: var(--eurospine-blue);
+}
+
+
+.woocommerce-order .woocommerce-thankyou-order-received {
+
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.woocommerce-order .woocommerce-thankyou-order-details {
+    margin: 20px 0;
+}
+
+.woocommerce-order .woocommerce-thankyou-order-details strong {
+    font-size: 18px;
+}
+
+/* RWD */
 
 @media screen and (min-width: 1146px) {
     html {
