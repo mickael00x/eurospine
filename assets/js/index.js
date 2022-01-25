@@ -329,26 +329,26 @@ window.addEventListener("load", function() {
             let formData = new FormData(formHomepage);
             const code = formData.get('input-validation').toUpperCase();
             const member = formData.get('input-homepage');
-
-            if (code === couponCode[0] && member !== null) {
+            
+            if (code === couponCode[0] && member === '1') {
                 window.location = "/shop?member=deleguates";
                 return;
             }
-        
+            /*
             if (code === couponCode[1] && member !== null) {
                 window.location = "/shop?code="+couponCode[1];
                 return;
             }
-
-            if (code !== '' && couponCode.indexOf(code) === parseInt('-1')) {
+            */
+            if (code !== '' && ( member === '0' || couponCode.indexOf(code) === parseInt('-1') )) {
                 invalidCode();
                 return;
             }
-
+            /*
             if (member === '1' && code === "") {
                 invalidCode();
                 return;
-            }
+            }*/
            
             window.location = "/shop";
         }

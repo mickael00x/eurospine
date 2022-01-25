@@ -238,3 +238,15 @@ function eurospine_woocommerce_coupon_links()
 }
 add_action('wp_loaded', 'eurospine_woocommerce_coupon_links', 30);
 add_action('woocommerce_add_to_cart', 'eurospine_woocommerce_coupon_links');
+
+function eurospine_woocommerce_after_order_details($order)
+{
+    if ($order->get_payment_method_title() === 'Direct bank transfer') {
+        echo
+        '<div class="eurospine_after_order_details">
+            <p><b>Bank details: IBAN FR76 1027 8010 0100 0209 3370 180 </b></p>
+            <p>To secure your place at EduWeek you must complete the payment process. Until then your booking is on hold.</p>
+        </div>';
+    }
+}
+add_action('woocommerce_after_order_details', 'eurospine_woocommerce_after_order_details');

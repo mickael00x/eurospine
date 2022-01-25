@@ -503,6 +503,16 @@ input.product-checkbox {
     cursor: pointer;
 }
 
+.product.euro-out-of-stock {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.product.euro-out-of-stock input.product-checkbox {
+    display: none;
+}
+
 .notes {
     position: relative;
     padding: 15px 40px;
@@ -847,6 +857,9 @@ img {
     font-size: 18px;
 }
 
+.eurospine_after_order_details{
+    margin: 20px 0;
+}
 /* RWD */
 
 @media screen and (min-width: 1146px) {
@@ -894,6 +907,7 @@ img {
     .product {
         padding: 20px;
     }
+
 
     .product-title, .days-day {
         font-size: 14px;

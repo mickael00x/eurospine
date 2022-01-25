@@ -33,18 +33,7 @@ include("nav.php"); ?>
         <div class="days-am-pm day-3-end">PM</div>
     </div>
     <div class="products">
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
-        <div class="empty-product"></div>
+
         <?php
 
         $args = array(
@@ -53,27 +42,33 @@ include("nav.php"); ?>
             'meta_value' => 'yes',
             'posts_per_page' => -1,
         );
-        $products = new WP_Query($args);
+        $products = new WP_Query($args); //Pourrait utiliser la fonction de WooCommerce get_products()
         if ($products->have_posts()) :
             while ($products->have_posts()) :
-                $products->the_post();
-                $product = get_product($products->post->ID);
+                $products->the_post(); // met dans $post le post suivant de la query
+                $product = get_product($post->ID);
 
-                if (isset($_GET['member']) && $_GET['member'] === "deleguates" && $product->post->post_excerpt == "member: Delegates") {
-                    echo "<div class='product " . $product->get_slug() . " " . extractClass($product->get_title()) . "'>";
-                    echo "<div class='product-title'>" . formatTitle($product->get_title()) . "</div>";
-                    echo "<div class='product-description'>" . get_the_excerpt($product->id) . "</div>";
+                $class = "product " . $product->get_slug() . " " . extractClass($product->get_title()) . ' ';
+                if (!$product->is_in_stock()) {
+                    $class .= 'euro-out-of-stock';
+                }
+                $title = formatTitle($product->get_title());
+
+                if (isset($_GET['member']) && $_GET['member'] === "deleguates" && $post->post_excerpt == "member: Delegates") {
+                    echo "<div class='" . $class . "'>";
+                    echo "<div class='product-title'>" . $title . "</div>";
+                    echo "<div class='product-description'>" . get_the_excerpt() . "</div>";
                     echo "<div class='product-price'>" . $product->get_price_html() . "</div>";
-                    echo "<input type='checkbox' value=" . $product->get_id() . " class='product-checkbox'>";
+                    echo "<input type='checkbox' value=" . get_the_ID() . " class='product-checkbox'>";
                     echo "</div>";
                 }
 
-                if (!isset($_GET['member']) && $product->post->post_excerpt == "member: Visitors") {
-                    echo "<div class='product " . $product->get_slug() . " " . extractClass($product->get_title()) . "'>";
-                    echo "<div class='product-title'>" . formatTitle($product->get_title()) . "</div>";
-                    echo "<div class='product-description'>" . get_the_excerpt($product->id) . "</div>";
+                if (!isset($_GET['member']) && $post->post_excerpt == "member: Visitors") {
+                    echo "<div class='" . $class . "'>";
+                    echo "<div class='product-title'>" . $title . "</div>";
+                    echo "<div class='product-description'>" . get_the_excerpt() . "</div>";
                     echo "<div class='product-price'>" . $product->get_price_html() . "</div>";
-                    echo "<input type='checkbox' value=" . $product->get_id() . " class='product-checkbox'>";
+                    echo "<input type='checkbox' value=" . get_the_ID() . " class='product-checkbox'>";
                     echo "</div>";
                 }
 
@@ -81,7 +76,18 @@ include("nav.php"); ?>
             endwhile;
         endif;
         wp_reset_query();
-
         ?>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
+        <div class="empty-product"></div>
     </div>
 </main>

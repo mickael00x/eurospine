@@ -57,7 +57,12 @@ do_action('woocommerce_email_customer_details', $order, $sent_to_admin, $plain_t
 if ($additional_content) {
 	echo wp_kses_post(wpautop(wptexturize($additional_content)));
 }
-
+if ($order->get_payment_method_title() === 'Direct bank transfer') {
+	echo "
+<p>To complete your order please transfer the total amount to the following bank account by using your order number as reference: </p>
+<p><b>Bank details: IBAN FR76 1027 8010 0100 0209 3370 180 </b></p>
+<p>Once your payment has been fully made, your order will be complete and a confirmation will be emailed to you.</p>";
+}
 /*
  * @hooked WC_Emails::email_footer() Output the email footer
  */

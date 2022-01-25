@@ -18,15 +18,16 @@
 
             <div class="inputs-validation">
                 <p class="txt-blue">If you have a coupon code, please apply it below.</p>
-                <input type="text" id="input-validation" placeholder="Enter code" name="input-validation">
-                <p class="invalid-code">Invalid Code</p>
-                <p><button type="submit" id="input-button">Validate</button></p>
+                <input type="text" id="input-validation" placeholder="Enter member discount code" name="input-validation">
+                <p class="invalid-code">Invalid member discount code</p>
+                <p><button type="submit" id="input-button">Continue</button></p>
             </div>
             <div class="inputs-validation-infos">
                 <p>Please note that, if you already are a EUROSPINE member and wish to take advantage of the EUROSPINE member discount when registering for the course, you must ensure you have settled your 2022 membership fee before starting your course registration. You can do this in your <a href="https://www.m-anage.com/Home/Index/Society/EUROSPINE-MB/en-GB">membership account</a>.</p>
                 <p>Once your membership payment has been cleared by our accountant, the member discount code will be shared with you in your M-anage account under the tile “Resources”.</p>
+                <p>Remember that places for EduWeek 2022 are limited and available on a first come and first serve basis</p>
                 <p>Please note that we cannot reimburse the difference between the non-member and members registration fee if a member registers at the non-members rate.</p>
-                <p>If you have paid your 2022 membership fees and still have not received your discount code by email, please contact: <a href="mailto:membership@eurospine.org">membership@eurospine.org</a></p>
+                <!-- <p>If you have paid your 2022 membership fees and still have not received your discount code by email, please contact: <a href="mailto:membership@eurospine.org">membership@eurospine.org</a></p> -->
             </div>
         </div>
     </main>
