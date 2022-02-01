@@ -339,7 +339,7 @@ button#input-button {
 }
 
 .custom-checkout-button:hover {
-    border: 2px solid #FFF;
+    border: 3px solid #FFF;
 }
 
 .days {
@@ -825,6 +825,71 @@ img {
     padding: 0 400px;
 }
 
+.custom-cart-message-problems {
+    margin: 0 100px 20px;
+    border:1px solid #D7D7D7;
+    border-radius: 20px;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.custom-cart-message-problems > a {
+    text-decoration: none;
+    background-color: var(--eurospine-blue);
+    color: #FFFFFF;
+    border: 1px solid var(--eurospine-blue);
+    padding: 10px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+.custom-cart-message-problems > a:hover {
+    background-color: #FFFFFF;
+    color: var(--eurospine-blue);
+}
+/* ======= HARAS =======*/
+
+main.single-page.Haras.hotel\*\*\*\*{
+    background-color: rgba(29, 29, 29, 0.87);
+    color: #FFFFFF;
+    min-height: 100vh;
+}
+#les-haras-hotel-les-haras-brasserie-just-50m-away-from-the-ircad {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.Haras.hotel\*\*\*\* > p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column > figure.wp-block-image > img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns {
+    padding: 0 300px;
+}
+main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column {
+    border-radius: 5px;
+    border:1px solid #666666;
+    transition: all .3s;
+}
+main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column > *:not(:first-child) {
+    padding: 20px;
+}
+main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column:hover {
+    background-color: rgb(29, 29, 29);
+}
+.wp-block-button__link.has-background {
+    border: 1px solid #FFFFFF;
+}
+
 /* .woocommerce-cart .woocommerce-breadcrumb {} */
 
 
@@ -842,7 +907,9 @@ img {
     color: var(--eurospine-blue);
 }
 
-
+.woocommerce-message {
+    display:none;
+}
 .woocommerce-order .woocommerce-thankyou-order-received {
 
     margin: 20px 0;
