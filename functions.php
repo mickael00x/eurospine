@@ -133,6 +133,24 @@ if (class_exists('WooCommerce')) {
     }
 }
 
+add_action( 'woocommerce_review_order_before_order_total', 'custom_vat_message' );
+function custom_vat_message () {
+    echo "<tr class='tax-total no-vat'><th>*VAT exemption - article 261-7-1°b) of the C.G.I.</th><td>0</td></tr>";
+}
+
+
+add_filter( 'woocommerce_get_order_item_totals', 'add_row_email', 10, 2 );
+ 
+function add_row_email( $total_rows, $myorder_obj ) {
+ 
+$total_rows['recurr_not'] = array(
+   'label' => "*VAT exemption - article 261-7-1°b) of the C.G.I.",
+   'value'   => '0'
+);
+ 
+return $total_rows;
+}
+
 
 //=== function templating
 
