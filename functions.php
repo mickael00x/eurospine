@@ -7,11 +7,15 @@ function eurospine_custom_theme()
     wp_register_style('roboto_font_cdn', 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', false, '1.0');
 
     wp_register_script('script_js', get_template_directory_uri() . '/assets/js/index.js', false, filemtime(__DIR__ . "/assets/js/index.js"));
+    wp_register_script('tarteaucitron', get_template_directory_uri() . '/assets/js/tarteaucitron/tarteaucitron.js', false, filemtime(__DIR__ . "/assets/js/index.js"));
+    wp_register_script('init', get_template_directory_uri() . '/assets/js/tarteaucitron/init.js', false, filemtime(__DIR__ . "/assets/js/index.js"));
 
     wp_enqueue_style('custom_css');
     wp_enqueue_style('roboto_font_cdn');
 
     wp_enqueue_script('script_js');
+    wp_enqueue_script('tarteaucitron');
+    wp_enqueue_script('init');
 }
 
 add_action('wp_enqueue_scripts', 'eurospine_custom_theme');
