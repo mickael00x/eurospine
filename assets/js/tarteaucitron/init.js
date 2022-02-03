@@ -37,6 +37,6 @@
 
 		"mandatory": true /* Show a message about mandatory cookies */
 	});
-
+	tarteaucitron.user.facebookpixelId = '850795931965588';
     tarteaucitron.user.linkedininsighttag = '2483929';
-	(tarteaucitron.job = tarteaucitron.job || []).push('facebook', "linkedininsighttag");
+	(tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel', "linkedininsighttag");
