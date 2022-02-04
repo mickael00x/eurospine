@@ -7,8 +7,10 @@ include("nav.php"); ?>
         <div class="emptySelectionCart">
             <div>Select the module you wish to attend</div>
             <div>
-                <p>The registration fee covers the cost of the eLearning and live components of the course, coffee breaks and lunch.</p>
-                <p>Participants are required to book and pay for their travel and accommodation themselves.<br>This is not included in the registration fee. </p>
+                <p>The registration fees cover the costs of the eLearning and live session components of the course, coffee breaks and lunch.</p>
+                <p>Participants are required to book and pay for their travel and accommodation expenses themselves since those expenses are not included in the registration fees.
+
+                </p>
             </div>
         </div>
         <div class="recapItemsInCart">

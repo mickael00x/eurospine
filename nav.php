@@ -13,16 +13,16 @@
             <div class="notes-infos">
                 <h3>Fees:</h3>
                 <p>
-                    The registration fee covers the cost of the eLearning and live components of the course, coffee breaks and lunch.<br>
-                    Modules 1 to 5 are delivered twice during the EduWeek. <br>Participants can only register for ONE of the module's cohort, at their preferred time/dates.
+                    The registration fees cover the costs of the e-Learning and live session components of the course, coffee breaks, and lunches.<br>
+                    Modules 1 to 5 are delivered twice during the EduWeek. <br>Participants can only register for ONE of the module's cohort, at their time/dates of preference.
                 </p>
                 <h3>Travel and accommodation:</h3>
                 <p>
-                    Participants are required to book and pay for their travel and accommodation themselves.<br>This is not included in the registration fee.
+                    Participants are required to book and pay for their travel and accommodationexpenses themselves since those expenses are not included in the registration fees.
                 </p>
                 <h3>Accompanying persons:</h3>
                 <p>
-                    There are no accompanying persons fees nor accompanying persons programme during this course.
+                    There are no fees for accompanying persons or for any accompanying person program during this course.
                 </p>
             </div>
         </div>

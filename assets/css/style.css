@@ -184,6 +184,10 @@ h3 {
     text-align: center;
 }
 
+#input-validation::placeholder {
+        font-size: 16px;
+}
+
 .input-box {
     display: flex;
     flex-direction: column;
@@ -253,6 +257,10 @@ button#input-button {
 
 .emptySelectionCart {
     font-size: 18px;
+}
+
+.emptySelectionCart>div:first-child+div {
+    padding-left: 25px;
 }
 
 #customCheckout>div>div:first-child {
@@ -807,6 +815,10 @@ img {
 
 /* ====== CART ====== */
 
+.woocommerce-notices-wrapper .woocommerce-message {
+    display: none;
+}
+
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
     background-color: #0079A7;
     color: #FFFFFF;
@@ -857,9 +869,22 @@ img {
     font-size: 18px;
 }
 
-.eurospine_after_order_details{
+.eurospine_after_order_details {
     margin: 20px 0;
 }
+
+/* Payment */
+
+#PaymentRequest input {
+    background: var(--eurospine-blue);
+    color: #fff;
+    padding: 20px 40px;
+    margin: 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
 /* RWD */
 
 @media screen and (min-width: 1146px) {

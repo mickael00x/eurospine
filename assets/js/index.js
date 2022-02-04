@@ -311,7 +311,7 @@ window.addEventListener("load", function() {
         const inputText = document.querySelector("#input-validation");
         let invalidAlert = document.querySelector('.invalid-code');
         const buttonSubmit = document.querySelector("#input-button");
-        const couponCode = ['EUROSPINE','EURO20']
+        const couponCode = ['SPINE022']
 
         function invalidCode() {
             if (invalidAlert.classList.contains('display-none'))
