@@ -7,11 +7,15 @@ function eurospine_custom_theme()
     wp_register_style('roboto_font_cdn', 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', false, '1.0');
 
     wp_register_script('script_js', get_template_directory_uri() . '/assets/js/index.js', false, filemtime(__DIR__ . "/assets/js/index.js"));
+    wp_register_script('tarteaucitron', get_template_directory_uri() . '/assets/js/tarteaucitron/tarteaucitron.js', false, filemtime(__DIR__ . "/assets/js/index.js"));
+    wp_register_script('init', get_template_directory_uri() . '/assets/js/tarteaucitron/init.js', false, filemtime(__DIR__ . "/assets/js/index.js"));
 
     wp_enqueue_style('custom_css');
     wp_enqueue_style('roboto_font_cdn');
 
     wp_enqueue_script('script_js');
+    wp_enqueue_script('tarteaucitron');
+    wp_enqueue_script('init');
 }
 
 add_action('wp_enqueue_scripts', 'eurospine_custom_theme');
@@ -131,6 +135,24 @@ if (class_exists('WooCommerce')) {
         $args = array_merge(array($reflection), $args);
         return call_user_func_array(array($method, 'invoke'), $args);
     }
+}
+
+add_action( 'woocommerce_review_order_before_order_total', 'custom_vat_message' );
+function custom_vat_message () {
+    echo "<tr class='tax-total no-vat'><th>*VAT exemption - article 261-7-1°b) of the C.G.I.</th><td>0</td></tr>";
+}
+
+
+add_filter( 'woocommerce_get_order_item_totals', 'add_row_email', 10, 2 );
+ 
+function add_row_email( $total_rows, $myorder_obj ) {
+ 
+$total_rows['recurr_not'] = array(
+   'label' => "*VAT exemption - article 261-7-1°b) of the C.G.I.",
+   'value'   => '0'
+);
+ 
+return $total_rows;
 }
 
 

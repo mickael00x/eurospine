@@ -360,8 +360,17 @@ window.addEventListener("load", function() {
     }
 
     
-
-
+    // //custom order note 
+    // const orderTotal = document.querySelector(".order-total");
+    // let customNote = document.createElement("tr")
+    // customNote.classList.add("tax-rate");
+    // let customNoteTitle = document.createElement("th")
+    // customNoteTitle.innerHTML = "*VAT exemption - article 261-7-1°b) of the C.G.I.";
+    // let customNotePrice = document.createElement("td");
+    // customNotePrice.innerHTML = "0";
+    // orderTotal.insertAdjacentElement("beforebegin", customNote);
+    // customNote.appendChild(customNoteTitle);
+    // customNote.appendChild(customNotePrice);
     
     // Checkout Field
     // PostCode
