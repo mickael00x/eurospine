@@ -126,6 +126,51 @@ h3 {
     margin-bottom: 35px;
 }
 
+.memberPopYes {
+    position: absolute;
+    transform: scale(0);
+    transition: all 0s ease;
+}
+
+
+.has-pop .memberPopYes {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    /*width: 480px;*/
+    background: #FFF;
+    border: 2px solid var(--eurospine-blue);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transform: scale(1);
+    transition: all .2s ease;
+}
+
+
+
+.closePopYes {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;;
+    color: rgba(255, 255, 255, 0);
+    background: var(--eurospine-blue);
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    transition: color .3s .2s ease;
+}
+
+.has-pop .closePopYes {
+    color: rgba(255, 255, 255, 1);
+}
+
 .input-homepage {
     display: none;
 }
@@ -170,10 +215,20 @@ h3 {
     padding: 20px;
     margin-top: 20px;
     text-align: center;
+    transition: all .3s ease;
 }
+
+.is-member .inputs-validation-infos {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+
 
 .inputs-validation-infos p {
     margin: 5px 0;
+    transition: all .3s ease;
 }
 
 #input-validation {
@@ -182,13 +237,15 @@ h3 {
     border-radius: 20px;
     font-size: 20px;
     text-align: center;
+    s
 }
 
 #input-validation::placeholder {
-        font-size: 16px;
+    font-size: 16px;
 }
 
 .input-box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,7 +404,7 @@ button#input-button {
 }
 
 .custom-checkout-button:hover {
-    border: 3px solid #FFF;
+    border: 2px solid #FFF;
 }
 
 .days {
@@ -837,71 +894,6 @@ img {
     padding: 0 400px;
 }
 
-.custom-cart-message-problems {
-    margin: 0 100px 20px;
-    border:1px solid #D7D7D7;
-    border-radius: 20px;
-    padding:20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.custom-cart-message-problems > a {
-    text-decoration: none;
-    background-color: var(--eurospine-blue);
-    color: #FFFFFF;
-    border: 1px solid var(--eurospine-blue);
-    padding: 10px 30px;
-    border-radius: 100px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all .3s ease-in-out;
-}
-.custom-cart-message-problems > a:hover {
-    background-color: #FFFFFF;
-    color: var(--eurospine-blue);
-}
-/* ======= HARAS =======*/
-
-main.single-page.Haras.hotel\*\*\*\*{
-    background-color: rgba(29, 29, 29, 0.87);
-    color: #FFFFFF;
-    min-height: 100vh;
-}
-#les-haras-hotel-les-haras-brasserie-just-50m-away-from-the-ircad {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.Haras.hotel\*\*\*\* > p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column > figure.wp-block-image > img {
-    object-fit: cover;
-    height: 300px;
-    width: 100%;
-}
-main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns {
-    padding: 0 300px;
-}
-main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column {
-    border-radius: 5px;
-    border:1px solid #666666;
-    transition: all .3s;
-}
-main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column > *:not(:first-child) {
-    padding: 20px;
-}
-main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column:hover {
-    background-color: rgb(29, 29, 29);
-}
-.wp-block-button__link.has-background {
-    border: 1px solid #FFFFFF;
-}
-
 /* .woocommerce-cart .woocommerce-breadcrumb {} */
 
 
@@ -919,9 +911,7 @@ main.single-page.Haras.hotel\*\*\*\* > .wp-block-columns > .wp-block-column:hove
     color: var(--eurospine-blue);
 }
 
-.woocommerce-message {
-    display:none;
-}
+
 .woocommerce-order .woocommerce-thankyou-order-received {
 
     margin: 20px 0;

@@ -14,6 +14,10 @@
                     <input type="radio" class="input-homepage" id="input-homepage-no" name="input-homepage" value=0>
                     <label class="label-homepage" for="input-homepage-no">No</label>
                 </div>
+                <div class="memberPopYes">
+                    <p>Once your membership payment has been cleared by our accountant, a member discount code will be shared with you in your M-anage account under the tab “Resources”.</p>
+                    <div class="closePopYes">+</div>
+                </div>
             </div>
 
             <div class="inputs-validation">
@@ -23,9 +27,9 @@
                 <p><button type="submit" id="input-button">Continue</button></p>
             </div>
             <div class="inputs-validation-infos">
-                <p>Please note that, if you already are a EUROSPINE member and wish to take advantage of the EUROSPINE member discount when registering for the course, you must ensure that you have settled your 2022 membership fee before registering for the course. You can do so in your <a href="https://www.m-anage.com/Home/Index/Society/EUROSPINE-MB/en-GB">membership account</a>.</p>
-                <p>Once your membership payment has been cleared by our accountant, the member discount code will be shared with you in your Manage account under the tab “Resources”.</p>
-                <p>Remember that places for EduWeek 2022 are limited and available on a "first-come and first-serve" basis</p>
+                <p>Please note that, if you already are a EUROSPINE member and wish to take advantage of the EUROSPINE member discount when registering for the course, you must ensure that you have settled your 2022 membership fees before registering for the course. You can do so in your <a href="https://www.m-anage.com/Home/Index/Society/EUROSPINE-MB/en-GB">membership account</a>.</p>
+                <p>Once your membership payment has been cleared by our accountant, the member discount code will be shared with you in your M-anage account under the tab “Resources”.</p>
+                <p>Remember that places for EduWeek 2022 are limited and available on a "first-come and first-served" basis</p>
                 <p>Please note that we cannot reimburse the difference between the non-member and members registration fees if a member registers using the non-member rate.</p>
             </div>
         </div>

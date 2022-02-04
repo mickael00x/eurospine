@@ -309,9 +309,11 @@ window.addEventListener("load", function() {
         const inputYes = document.querySelector("#input-homepage-yes");
         const inputNo = document.querySelector("#input-homepage-no");
         const inputText = document.querySelector("#input-validation");
+        const closePopYes = document.querySelector('.closePopYes')
         let invalidAlert = document.querySelector('.invalid-code');
         const buttonSubmit = document.querySelector("#input-button");
         const couponCode = ['SPINE022']
+        const mainContainer = formHomepage.firstElementChild;
 
         function invalidCode() {
             if (invalidAlert.classList.contains('display-none'))
@@ -353,10 +355,44 @@ window.addEventListener("load", function() {
             window.location = "/shop";
         }
 
+        function memberPopOpen() { 
+            if (!mainContainer.classList.contains('has-pop')) {
+                mainContainer.classList.add('has-pop');
+            }
+        }
+        function memberPopClose(event = null) { 
+            if (event !== null) event.stopPropagation();
+            
+            if (mainContainer.classList.contains('has-pop')) {
+                mainContainer.classList.remove('has-pop');
+            }
+        }
+
+        function memberYes(event) {
+            event.stopPropagation();
+            if (!mainContainer.classList.contains('is-member')) {
+                mainContainer.classList.add('is-member');
+            }
+            memberPopOpen();
+        }
+        function memberNo(event) { 
+            
+            event.stopPropagation();
+            if (mainContainer.classList.contains('is-member')) {
+                mainContainer.classList.remove('is-member')
+            }
+            memberPopClose();
+        }
+
+        
 
         hideInvalidCode();
         formHomepage.addEventListener('submit', formHomepageSubmit);
         inputText.addEventListener('keyup', (e) => { hideInvalidCode() });
+        inputYes.addEventListener('click', memberYes);
+        inputNo.addEventListener('click', memberNo);
+        closePopYes.addEventListener('click', memberPopClose);
+        mainContainer.addEventListener('click', memberPopClose);
     }
 
     
