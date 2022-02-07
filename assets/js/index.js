@@ -456,4 +456,19 @@ window.addEventListener("load", function() {
     }
 
 
+    // Monetico 
+
+    const paymentRequest = document.getElementById('PaymentRequest');
+
+    if (paymentRequest) { 
+
+        const action = paymentRequest.getAttribute('action');
+        if (action.search("monetico") >= 0) {
+            paymentRequest.submit();
+        }
+
+
+    }
+
+
 })

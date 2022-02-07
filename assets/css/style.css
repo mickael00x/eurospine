@@ -157,7 +157,8 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;;
+    margin-left: 20px;
+    ;
     color: rgba(255, 255, 255, 0);
     background: var(--eurospine-blue);
     border-radius: 50%;
@@ -898,6 +899,35 @@ img {
 
 
 /* Order page  */
+.custom-cart-message-problems {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+
+    margin: 20px 100px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgb(242, 242, 242);
+
+}
+
+.custom-cart-message-problems a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px 20px;
+    margin-left: 20px;;
+    border-radius: 15px;
+    background: var(--eurospine-blue);
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+
 .woocommerce-order {
     padding: 20px;
     border: 2px solid var(--eurospine-blue);
