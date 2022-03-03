@@ -197,15 +197,6 @@ function CUSTOM_vat_number_display_admin_order_meta( $order ) {
     echo '<p><strong>' . __( 'VAT Number', 'woocommerce' ) . ':</strong> ' . get_post_meta( $order->id, '_vat_number', true ) . '</p>';
 }
 
-add_filter( 'woocommerce_email_order_meta', 'custom_vat_number_display_email' );
-/**
-* VAT Number in emails
-*/
-function custom_vat_number_display_email( $keys ) {
-     $keys['VAT Number'] = '_vat_number';
-     return $keys;
-}
-
 
 
 //=== function templating
