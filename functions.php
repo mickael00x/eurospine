@@ -151,9 +151,61 @@ $total_rows['recurr_not'] = array(
    'label' => "*VAT exemption - article 261-7-1°b) of the C.G.I.",
    'value'   => '0'
 );
+$total_rows['_vat_number'] = array(
+    'label' => 'VAT number',
+    'value'   => get_post_meta( $myorder_obj->get_order_number(), '_vat_number', true )
+ );
  
 return $total_rows;
 }
+
+
+
+add_action( 'woocommerce_after_order_notes', 'custom_vat_field' );
+/**
+* VAT Number in WooCommerce Checkout
+*/
+function custom_vat_field( $checkout ) {
+    echo '<div id="custom_vat_field"><h2>' . __('VAT Number') . '</h2>';
+    
+    woocommerce_form_field( 'vat_number', array(
+        'type'          => 'number',
+        'class'         => array( 'vat-number-field form-row-wide') ,
+        'label'         => __( 'VAT Number' ),
+        'placeholder'   => __( 'Enter your VAT number' ),
+    ), $checkout->get_value( 'vat_number' ));
+    
+    echo '</div>';
+}
+
+
+add_action( 'woocommerce_checkout_update_order_meta', 'custom_checkout_vat_number_update_order_meta' );
+/**
+* Save VAT Number in the order meta
+*/
+function custom_checkout_vat_number_update_order_meta( $order_id ) {
+    if ( ! empty( $_POST['vat_number'] ) ) {
+        update_post_meta( $order_id, '_vat_number', sanitize_text_field( $_POST['vat_number'] ) );
+    }
+}
+
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'CUSTOM_vat_number_display_admin_order_meta', 10, 1 );
+/**
+ * Display VAT Number in order edit screen
+ */
+function CUSTOM_vat_number_display_admin_order_meta( $order ) {
+    echo '<p><strong>' . __( 'VAT Number', 'woocommerce' ) . ':</strong> ' . get_post_meta( $order->id, '_vat_number', true ) . '</p>';
+}
+
+add_filter( 'woocommerce_email_order_meta', 'custom_vat_number_display_email' );
+/**
+* VAT Number in emails
+*/
+function custom_vat_number_display_email( $keys ) {
+     $keys['VAT Number'] = '_vat_number';
+     return $keys;
+}
+
 
 
 //=== function templating
