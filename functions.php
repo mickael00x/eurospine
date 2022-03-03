@@ -189,13 +189,7 @@ function custom_checkout_vat_number_update_order_meta( $order_id ) {
     }
 }
 
-add_action( 'woocommerce_admin_order_data_after_billing_address', 'CUSTOM_vat_number_display_admin_order_meta', 10, 1 );
-/**
- * Display VAT Number in order edit screen
- */
-function CUSTOM_vat_number_display_admin_order_meta( $order ) {
-    echo '<p><strong>' . __( 'VAT Number', 'woocommerce' ) . ':</strong> ' . get_post_meta( $order->id, '_vat_number', true ) . '</p>';
-}
+
 
 
 
@@ -315,3 +309,37 @@ function eurospine_woocommerce_after_order_details($order)
     }
 }
 add_action('woocommerce_after_order_details', 'eurospine_woocommerce_after_order_details');
+
+
+
+
+function save_extra_checkout_fields( $order_id, $posted ){
+    // don't forget appropriate sanitization if you are using a different field type
+    if( isset( $posted['_vat_number'] ) ) {
+        update_post_meta( $order_id, '_vat_number', sanitize_text_field( $posted['vat_number'] ) );
+    }
+    if( isset( $posted['_vat_number'] ) && in_array( $posted['_vat_number'], array( 'first', 'second', 'third' ) ) ) {
+        update_post_meta( $order_id, '_vat_number', $posted['_vat_number'] );
+    }
+}
+add_action( 'woocommerce_checkout_update_order_meta', 'save_extra_checkout_fields', 10, 2 );
+
+
+add_action( 'woocommerce_admin_order_data_after_order_details', 'vat_editable_order_meta' );
+
+function vat_editable_order_meta( $order ) {
+    $vat_number_field = get_post_meta( $order->get_id(), '_vat_number', true );
+
+    woocommerce_wp_text_input( array(
+        'id' => '_vat_number',
+        'label' => 'VAT number:',
+        'value' => $vat_number_field,
+        'wrapper_class' => 'form-field-wide'
+    ) );
+}
+
+add_action( 'woocommerce_process_shop_order_meta', 'save_general_details' );
+
+function save_general_details( $ord_id ){
+	update_post_meta( $ord_id, '_vat_number', wc_clean( $_POST[ '_vat_number' ] ) );
+}
