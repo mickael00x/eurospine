@@ -55,9 +55,12 @@ include("nav.php"); ?>
                     $class .= 'euro-out-of-stock';
                 }
                 $title = formatTitle($product->get_title());
-
+                $stock = $product->get_stock_quantity();
                 if (isset($_GET['member']) && $_GET['member'] === "deleguates" && $post->post_excerpt == "member: Delegates") {
                     echo "<div class='" . $class . "'>";
+                    if($stock <= 5) {
+                        echo "<div class='product-stock'>Few places left</div>";
+                    }
                     echo "<div class='product-title'>" . $title . "</div>";
                     echo "<div class='product-description'>" . get_the_excerpt() . "</div>";
                     echo "<div class='product-price'>" . $product->get_price_html() . "</div>";
@@ -67,6 +70,9 @@ include("nav.php"); ?>
 
                 if (!isset($_GET['member']) && $post->post_excerpt == "member: Visitors") {
                     echo "<div class='" . $class . "'>";
+                    if($stock <= 5) {
+                        echo "<div class='product-stock'>Few places left</div>";
+                    }
                     echo "<div class='product-title'>" . $title . "</div>";
                     echo "<div class='product-description'>" . get_the_excerpt() . "</div>";
                     echo "<div class='product-price'>" . $product->get_price_html() . "</div>";

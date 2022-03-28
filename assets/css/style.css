@@ -319,6 +319,7 @@ button#input-button {
 
 
 
+
 .emptySelectionCart>div:first-child+div {
     padding-left: 25px;
 }
@@ -559,6 +560,19 @@ button#input-button {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.product-stock {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(78, 78, 78, 0.123);
+    color: var(--eurospine-blue);
+    padding: 2px 6px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-style: italic;
 }
 
 input.product-checkbox {
@@ -854,6 +868,15 @@ img {
     padding: 20px;
     background-color: #F2F2F2;
     border-radius: 20px;
+}
+
+.woocommerce-cart-error {
+    background-color: #bb1f1f15;
+    border: 2px solid #df451e;
+    color: #df351e;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 #billing_email_field, #billing_country_field {

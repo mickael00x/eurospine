@@ -190,7 +190,7 @@ function custom_checkout_vat_number_update_order_meta( $order_id ) {
 }
 
 
-
+    
 
 
 //=== function templating
